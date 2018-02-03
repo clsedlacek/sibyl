@@ -13,7 +13,7 @@ module.exports = (client, reaction, user) => {
     if (reaction.emoji.name === "🤐") {
         console.log("Muting emoji detected. Testing for reaction count...");
 
-        function testVote(userObj) {       // local function to test if reaction-giver has the role that enables peer-vote muting
+        function testVoteMute(userObj) {       // local function to test if reaction-giver has the role that enables peer-vote muting
             return reaction.message.channel.guild.fetchMember(userObj) // NVENTOUS: adding "return" so this function now returns a promise instead of undefined
             .then(member => {
                 if (member.roles.find("name", voterRole.name)) {      // find all members in Regulars role, execute if reaction-giver is a Regular
@@ -40,7 +40,7 @@ module.exports = (client, reaction, user) => {
             })};
 
         reaction.users.forEach(function(user) {     // when reaction is added, run this code for each user who voted
-            testVote(user).then(isMuted => {
+            testVoteMute(user).then(isMuted => {
                 if (isMuted) { // NVENTOUS: if user was squelched, reset vote count
                     voteTally = 0;
                 }
