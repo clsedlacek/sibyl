@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const d20 = require('d20.js');
+const d20 = require('d20');
 
 module.exports = (client, message, args) => {
     console.log('Log', 'rolled...');

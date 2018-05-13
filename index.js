@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const d20 = require('./node_modules/d20.js');
-const config = require('.config/config.json');
+const d20 = require('d20');
+const config = require('./config/config.json');
 const client = new Discord.Client();
 //import modules, creates bot
 
