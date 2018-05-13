@@ -6,6 +6,16 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
+commander@^2.8.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
+
+d20@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/d20/-/d20-1.4.1.tgz#8575327d94bb96619348e04adfbb250e5a2bc62a"
+  dependencies:
+    commander "^2.8.1"
+
 discord.js@^11.2.1:
   version "11.3.2"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-11.3.2.tgz#3c4074c1cb1a4916582fb96ded5ffa1324411f95"
