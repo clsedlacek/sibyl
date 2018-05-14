@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const roles = require('../config/roles.json');
 
 module.exports = (client, message) => {
     console.log('Log', message.createdTimestamp + " @" + message.author.username + " in " + message.channel + " said: " + message.content);
@@ -8,9 +9,9 @@ module.exports = (client, message) => {
     if(message.channel.id == "350144276824457226") {
         chanMember = message.author;       //store author as variable for whatever reason
         console.log(chanMember + " wrote an introduction.");        
-        normieRole = message.member.guild.roles.find("name", "🕵 Normies");
+        normieRole = message.member.guild.roles.find("name", roles.registree);
         message.member.addRole(normieRole).catch(console.error);
-        console.log(chanMember + " is now a normie.");        
+        console.log(chanMember + " is now a "+roles.registree);        
 
 //      message.author.addRole(message.member.guild.roles.find("name", "🕵 Lurkers")).catch(console.error);
         
