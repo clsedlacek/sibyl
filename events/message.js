@@ -14,8 +14,6 @@ module.exports = (client, message) => {
         message.member.addRole(normieRole).catch(console.error);
         console.log(chanMember + " is now a "+roles.registree);        
 
-//      message.author.addRole(message.member.guild.roles.find("name", "🕵 Lurkers")).catch(console.error);
-        
         return;
     };
     
@@ -27,8 +25,6 @@ module.exports = (client, message) => {
 
 
         
-    // const msgChannel = message.channel.id;
-    // console.log(msgChannel); 
     const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
 
     //magic formula to reformat message into command-argument array
