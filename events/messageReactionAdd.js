@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
+const roles = require('../config/roles.json');
 
 module.exports = (client, reaction, user) => {
     var muteLimit = 4;         
     var voteTally = 0;         // set counter that will only be incremented by voter's reactions, this will be reset with each vote counted and repopulated again    
-    var muteRole = reaction.message.member.guild.roles.find("name", "🤐 Squelched");
-    var voterRole = reaction.message.member.guild.roles.find("name", "🌈 Regulars");
-    var memberRole = reaction.message.member.guild.roles.find("name", "🕵 Normies");    
+    var muteRole = reaction.message.member.guild.roles.find("name", roles.squelched);
+    var voterRole = reaction.message.member.guild.roles.find("name", roles.community);
+    var memberRole = reaction.message.member.guild.roles.find("name", roles.registree);    
     var peerModChannel = reaction.message.guild.channels.find("name", "braintrust");
     var arbitrationChannel = reaction.message.guild.channels.find("name", "arbitration");
 
