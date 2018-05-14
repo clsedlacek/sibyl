@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 const roles = require('../config/roles.json');
+const channels = require('../config/channels.json');
 
 module.exports = (client, message) => {
     console.log('Log', message.createdTimestamp + " @" + message.author.username + " in " + message.channel + " said: " + message.content);
 //    console.log(message.channel);
 
 
-    if(message.channel.id == "350144276824457226") {
+    if(message.channel.id == channels.introductions) {
         chanMember = message.author;       //store author as variable for whatever reason
         console.log(chanMember + " wrote an introduction.");        
         normieRole = message.member.guild.roles.find("name", roles.registree);

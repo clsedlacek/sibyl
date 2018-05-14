@@ -1,3 +1,5 @@
 config/config.json
+config/roles.json
+config/channels.json
 node_modules
 *.swp
