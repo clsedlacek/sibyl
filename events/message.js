@@ -8,7 +8,7 @@ module.exports = (client, message) => {
     if(message.channel.id == "350144276824457226") {
         chanMember = message.author;       //store author as variable for whatever reason
         console.log(chanMember + " wrote an introduction.");        
-        normieRole = message.member.guild.roles.find("name", "🕵 Normies");
+        normieRole = message.member.guild.roles.find("name", "🕵 Registree");
         message.member.addRole(normieRole).catch(console.error);
         console.log(chanMember + " is now a normie.");        
 
