@@ -1,17 +1,17 @@
 const Discord = require('discord.js');
 const roles = require('../config/roles.json');
+const moderationConfig = require('../config/moderation.json');
 
 module.exports = (client, reaction, user) => {
-    var muteLimit = 4;         
     var voteTally = 0;         // set counter that will only be incremented by voter's reactions, this will be reset with each vote counted and repopulated again    
-    var muteRole = reaction.message.member.guild.roles.find("name", roles.squelched);
+    var muteRole = reaction.message.member.guild.roles.find("name", roles.hushed);
     var voterRole = reaction.message.member.guild.roles.find("name", roles.community);
     var memberRole = reaction.message.member.guild.roles.find("name", roles.registree);    
     var peerModChannel = reaction.message.guild.channels.find("name", "braintrust");
     var arbitrationChannel = reaction.message.guild.channels.find("name", "arbitration");
 
     console.log('Log', `${user.tag} reacted to message id ${reaction.message.id} with the reaction ${reaction.emoji}`);
-    if (reaction.emoji.name === "🤐") {
+    if (reaction.emoji.name === moderationConfig.muteReact) {
         console.log("Muting emoji detected. Testing for reaction count...");
 
         function testVoteMute(userObj) {       // local function to test if reaction-giver has the role that enables peer-vote muting
@@ -22,7 +22,7 @@ module.exports = (client, reaction, user) => {
                     voteTally++;
                 };
 
-                if (voteTally >= muteLimit) {    // if that user was a Regular, recheck how many tallies the post has
+                if (voteTally >= moderationConfig.muteVoteThreshold) {    // if that user was a Regular, recheck how many tallies the post has
                     console.log("Squelchable offense!");
                     // NVENTOUS: just bear in mind that these three reaction.message.member method calls will execute async and the function won't wait for them to finish before returning
                     reaction.message.member.removeRole(voterRole).catch(console.error); // add muted role to message poster     
