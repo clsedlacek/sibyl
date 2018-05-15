@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
+const roles = require('../config/roles.json');
 
 
 module.exports = (client, message, args) => {
     console.log('Log', 'someone wants to be a meathead...');
-    var regularRole = message.member.guild.roles.find("name", "🌈 Regulars");   
-    var meetupRole = message.member.guild.roles.find("name", "🍖 Certified Meat");
+    var regularRole = message.member.guild.roles.find("name", roles.community);   
+    var meetupRole = message.member.guild.roles.find("name", roles.locationVerified);
     
     if (args.length === 0) {
         message.channel.send(`Please specify your location.`)
@@ -19,10 +20,10 @@ module.exports = (client, message, args) => {
                 member.addRole(meetupRole).catch(console.error);            // Add meetup role
                 console.log("User has been deemed certicied meat.");
             } else {
-                message.channel.send(`Meetup rights are only available to @🌈 Regulars.`)            
+                message.channel.send("Meetup rights are only available to " + roles.community)            
                 return
                 };
-            message.guild.channels.find("name", "meetups").send("**<@" + userObj.id + ">** has been deemed 🍖 Certified Meat at location **" + args.join(' ') + "**");
+            message.guild.channels.find("name", "meetups").send("**<@" + userObj.id + ">** has been deemed " + roles.locationVerified + " at location **" + args.join(' ') + "**");
             // message.guild.channel.get("meetups").send(`"${member.user.username}" has been added to the channel at location ${args}`);                
         })};
     
