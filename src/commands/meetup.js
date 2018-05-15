@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const roles = require('../config/roles.json');
+const roles = require('../../config/roles.json');
 
 
 module.exports = (client, message, args) => {

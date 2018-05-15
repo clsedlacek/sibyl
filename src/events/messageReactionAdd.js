@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const roles = require('../config/roles.json');
-const moderationConfig = require('../config/moderation.json');
+const roles = require('../../config/roles.json');
+const moderationConfig = require('../../config/moderation.json');
 
 module.exports = (client, reaction, user) => {
     var voteTally = 0;         // set counter that will only be incremented by voter's reactions, this will be reset with each vote counted and repopulated again    

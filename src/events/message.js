@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const roles = require('../config/roles.json');
-const channels = require('../config/channels.json');
+const roles = require('../../config/roles.json');
+const channels = require('../../config/channels.json');
 
 module.exports = (client, message) => {
     console.log('Log', message.createdTimestamp + " @" + message.author.username + " in " + message.channel + " said: " + message.content);
