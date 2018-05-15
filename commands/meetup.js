@@ -18,7 +18,7 @@ module.exports = (client, message, args) => {
             if (member.roles.find("name", regularRole.name)) {      // find members in Regulars role
                 console.log(userObj.username + " requesting meatspace permissions is a regular.");                
                 member.addRole(meetupRole).catch(console.error);            // Add meetup role
-                console.log("User has been deemed certicied meat.");
+                console.log("User has been deemed certified meat.");
             } else {
                 message.channel.send("Meetup rights are only available to " + roles.community)            
                 return
