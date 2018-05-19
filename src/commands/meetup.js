@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const roles = require('../../config/roles.json');
+const channels = require('../../config/channels.json');
 
 
 module.exports = (client, message, args) => {
@@ -23,8 +24,7 @@ module.exports = (client, message, args) => {
                 message.channel.send("Meetup rights are only available to " + roles.community)            
                 return
                 };
-            message.guild.channels.find("name", "meetups").send("**<@" + userObj.id + ">** has been deemed " + roles.locationVerified + " at location **" + args.join(' ') + "**");
-            // message.guild.channel.get("meetups").send(`"${member.user.username}" has been added to the channel at location ${args}`);                
+            message.guild.channels.find("id", channels.meetups).send("**<@" + userObj.id + ">** has been deemed " + roles.locationVerified + " at location **" + args.join(' ') + "**");
         })};
     
     meetupAdd(message.author);
