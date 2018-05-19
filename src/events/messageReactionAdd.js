@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const roles = require('../../config/roles.json');
+const channels = require('../../config/channels.json');
 const moderationConfig = require('../../config/moderation.json');
 
 module.exports = (client, reaction, user) => {
@@ -7,8 +8,8 @@ module.exports = (client, reaction, user) => {
     var muteRole = reaction.message.member.guild.roles.find("name", roles.hushed);
     var voterRole = reaction.message.member.guild.roles.find("name", roles.community);
     var memberRole = reaction.message.member.guild.roles.find("name", roles.registree);    
-    var peerModChannel = reaction.message.guild.channels.find("name", "braintrust");
-    var arbitrationChannel = reaction.message.guild.channels.find("name", "arbitration");
+    var peerModChannel = reaction.message.guild.channels.find("id", channels.braintrust);
+    var arbitrationChannel = reaction.message.guild.channels.find("id", channels.arbitration);
 
     console.log('Log', `${user.tag} reacted to message id ${reaction.message.id} with the reaction ${reaction.emoji}`);
     if (reaction.emoji.name === moderationConfig.muteReact) {
@@ -31,9 +32,9 @@ module.exports = (client, reaction, user) => {
                     // NVENTOUS: function returns true if user was squelched
                     // i decided to change it to this because the function is testing whether the vote count is squelcheable
                     // and returning true/false on that eliminates some code redundancy when testing whether to reset vote count
+                    peerModChannel.send("**" + reaction.message.member + " has been muted.**"); // Test to see if the emoji is multiple zipper emojis. If it is greater than the mute threshold, action is taken.
+                    arbitrationChannel.send("Hello <@" + reaction.message.member.id + ">, you have been placed in #arbitration. If you are @here, this means that three or more server members have voted to mute you from the primary chats. Please speak with a member of the staff when they are available to discuss why you have been muted by the community.");
                     return true;    
-                    // peerModChannel.send("**" + reaction.message.member + " has been muted.**"); // Test to see if the emoji is multiple zipper emojis. If it is greater than the mute threshold, action is taken.
-                    // arbitrationChannel.send("Hello <@" + reaction.message.member.id + ">, you have been placed in #arbitration. If you are @here, this means that three or more server members have voted to mute you from the primary chats. Please speak with a member of the staff when they are available to discuss why you have been muted by the community.");
                 };
 
                 // function returns false if user was not squelched
