@@ -4,7 +4,13 @@ const channels = require('../../../config/channels.json');
 const moderationConfig = require('../../../config/moderation.json');
 
 
-// check if mute react is valid based on user role permissions
+/**
+ * Check if mute react is valid based on user's permissions/roles
+ * @private
+ * @param {Discord.Guild} reactGuild Server/guild to test permissions on
+ * @param {Discord.User} reactUser Discord user object who added the vote
+ * @returns {Promise.<boolean>} true if conditions met, false if not
+ */
 function checkUserMutePermissions(reactGuild, reactUser) {
 	let voterRole = reactGuild.roles.find("name", roles.community);
 
@@ -20,7 +26,12 @@ function checkUserMutePermissions(reactGuild, reactUser) {
 };
 
 
-// mutes a user
+/**
+ * Adds muted role to user and strips their registree/community roles
+ * @private
+ * @param {Discord.GuildMember} Server member to perform mute action on
+ * @returns {Promise.<Array>} Returns a promise containing results of role actions
+ */
 function muteUser(userTarget) {
 	let muteRole = userTarget.guild.roles.find("name", roles.hushed);
 	let communityRole = userTarget.guild.roles.find("name", roles.community);
@@ -36,7 +47,12 @@ function muteUser(userTarget) {
 }
 
 
-// sends arbitration notices to appropriate channels and tags user in question
+/**
+ * Sends arbitration notifications to peer moderation and arbitration channels, tagging user in question
+ * @private
+ * @param {Discord.GuildMember} Server member to notify
+ * @returns {Promise.<Array>} Returns a promise containing results of message actions
+ */
 function sendArbitrationNotices(userTarget) {
 	let peerModChannel = userTarget.guild.channels.find("id", channels.braintrust);
 	let arbitrationChannel = userTarget.guild.channels.find("id", channels.arbitration);
@@ -54,7 +70,11 @@ function sendArbitrationNotices(userTarget) {
 
 
 module.exports = {
-	// mute guild member and send arbitration messages
+	/**
+	 * Mute guild member and send notification messages to appropriate channels
+	 * @param {Discord.GuildMember} muteGuildMember Server member to mute
+	 * @returns {Promise}
+	 */
 	muteActions: function(muteGuildMember) {
 		return muteUser(muteGuildMember)
 		.then(() => {
@@ -62,7 +82,12 @@ module.exports = {
 		});
 	},
 
-	// checks if specified reaction is mute react
+
+	/**
+	 * Checks if specified reaction is a mute react
+	 * @param {Discord.MessageReaction} reaction Reaction to check
+	 * @returns {boolean}
+	 */
 	checkIsMuteReact: function (reaction) {
 		if (reaction.emoji.name === moderationConfig.muteReact) {
 			return true;
@@ -71,7 +96,11 @@ module.exports = {
 	},
 
 
-	// checks all votes on  a message reaction to see whether mute conditions are reached
+	/**
+	 * Checks all votes on a message reaction to see whether mute conditions are reached
+	 * @param {Discord.MessageReaction} reaction Reaction to test votes on
+	 * @returns {Promise.<boolean>}
+	 */
 	checkVoteConditions: function (reaction) {
 		let muteThreshold = moderationConfig.muteVoteThreshold;
 		let muteCheckPromises = [];
