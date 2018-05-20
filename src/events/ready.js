@@ -1,4 +1,4 @@
 module.exports = (client) => {
-    console.log('Log', 'Logged in!');
-    //code to execute upon login
+	//code to execute upon login
+	console.log('Log', 'Logged in!');
 };
