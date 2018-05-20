@@ -56,9 +56,10 @@ function muteUser(userTarget) {
 function sendArbitrationNotices(userTarget) {
 	let peerModChannel = userTarget.guild.channels.find("id", channels.braintrust);
 	let arbitrationChannel = userTarget.guild.channels.find("id", channels.arbitration);
+	let muteThreshold = moderationConfig.muteVoteThreshold;
 
-	let peerModMessage = "**" + userTarget + " has been muted.**"
-	let arbitrationMessage = "Hello <@" + userTarget.id + ">, you have been placed in #arbitration. If you are @here, this means that three or more server members have voted to mute you from the primary chats. Please speak with a member of the staff when they are available to discuss why you have been muted by the community."
+	let peerModMessage = `**${userTarget} has been muted.**`
+	let arbitrationMessage = `Hello <@${userTarget.id}>, you have been placed in #arbitration. If you are @here, this means that ${muteThreshold} or more server members have voted to mute you from the primary chats. Please speak with a member of the staff when they are available to discuss why you have been muted by the community.`
 
 	let messagePromises = [];
 
@@ -116,12 +117,12 @@ module.exports = {
 
 			// if vote count meets threshold, mute
 			if (voteCount >= muteThreshold) {
-				console.log('threshold of ' + muteThreshold + ' votes reached');
+				console.log(`threshold of ${muteThreshold} votes reached`);
 				return true;
 			}
 			// no mute
 			else {
-				console.log('threshold of ' +muteThreshold + ' votes not reached, only '+ voteCount + ' votes counted, taking no action');
+				console.log(`threshold of ${muteThreshold} votes not reached, only ${voteCount} votes counted, taking no action`);
 				return false;
 			}
 
