@@ -6,12 +6,12 @@ const introductions = require('../features/introductions.js');
 module.exports = (client, message) => {
 	console.log('Log', message.createdTimestamp + " @" + message.author.username + " in " + message.channel + " said: " + message.content);
 
+	if(message.author.bot) return;
+
 	if(message.channel.id == channels.introductions) {
 		introductions.registerIntroduction(message.member);
 		return;
 	};
-
-	if(message.author.bot) return;
 
 	// log everything and check if message is a user's command
 	if(message.content.indexOf(client.config.prefix) !== 0) return;
