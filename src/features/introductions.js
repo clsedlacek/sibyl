@@ -4,7 +4,7 @@ const channels = require('../../config/channels.json');
 
 module.exports = {
 	sendWelcomeMessage: function(guildMember) {
-		let welcomeMessage = `**Welcome to the server, <@${guildMember.id}>!** In order to access the chat channels, write your A/S/L and something about yourself here. Please take some time to read the rules and guidelines in #server and enjoy your stay!`
+		let welcomeMessage = `**Welcome to the server, <@${guildMember.id}>!** In order to access more chat channels, please share something about yourself such as your age, pronouns/gender, general location, interests, or what brings you here. Please take some time to read the rules and guidelines in <#${channels.server}> and enjoy your stay! If you have any questions, feel free to ask us in <#${channels.casual}>.`
 		return guildMember.guild.channels.find("id", channels.introductions).send(welcomeMessage);
 	},
 
