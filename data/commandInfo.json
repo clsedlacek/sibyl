@@ -1,0 +1,34 @@
+{
+	"commands": [
+		{
+			"command": "!help",
+			"description": "Show bot information and commands available to you",
+			"roleRequired": false,
+			"examples": []
+		},
+		{
+			"command": "!ping",
+			"description": "Return bot latency in milliseconds",
+			"roleRequired": false,
+			"examples": []
+		},
+		{
+			"command": "!serverinfo",
+			"description": "Show information about this server",
+			"roleRequired": false,
+			"examples": []
+		},
+		{
+			"command": "!roll [dice]",
+			"description": "Roll dice in d20 and other increments",
+			"roleRequired": false,
+			"examples": ["!roll 2d20", "!roll 1d6+5", "!roll 3d10 +2 -4"]
+		},
+		{
+			"command": "!meetup [location]",
+			"description": "Register your location and gain access to the meetups role/channel",
+			"roleRequired": "community",
+			"examples": ["!meetup New York City", "!meetup India"]
+		}
+	]
+}

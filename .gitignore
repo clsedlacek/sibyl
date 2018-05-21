@@ -1,1 +1,6 @@
-config.json
+config/config.json
+config/roles.json
+config/channels.json
+config/moderation.json
+node_modules
+*.swp
