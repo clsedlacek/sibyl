@@ -24,7 +24,7 @@ module.exports = {
 	},
 
 	sendAddCommunityFailMessage: function(guildChannel) {
-		return guildChannel.send(`Please specify which member to add to ${roles.community}. Example: \`!community [member]\``)
+		return guildChannel.send(`Please specify which member to add to ${roles.community}. Example: \`!community sibyl-oracle#5143\``)
 	},
 
 	sendIncorrectPermissionsMessage: function(guildChannel) {

@@ -29,6 +29,12 @@
 			"description": "Register your location and gain access to the meetups role/channel",
 			"roleRequired": "community",
 			"examples": ["!meetup New York City", "!meetup India"]
+		},
+		{
+			"command": "!community [member]",
+			"description": "Add specified member to community role and send welcome/information message",
+			"roleRequired": "operator",
+			"examples": ["!meetup sibyl-oracle#5143"
 		}
 	]
 }
