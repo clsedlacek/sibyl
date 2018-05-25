@@ -15,6 +15,7 @@ client.commands.set('serverinfo', require('./src/commands/serverinfo.js'));
 client.commands.set('roll', require('./src/commands/roll.js'));
 client.commands.set('help', require('./src/commands/help.js'));
 client.commands.set('meetup', require('./src/commands/meetup.js'));
+client.commands.set('community', require('./src/commands/community.js'));
 //setting all the commands and locations
 
 client.on('message', message => require("./src/events/message.js")(client, message));
