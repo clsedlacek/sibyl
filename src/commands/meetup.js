@@ -6,8 +6,6 @@ const meetup = require('../features/meetups/meetup.js');
 
 module.exports = (client, message, args) => {
 	console.log('Log', 'someone wants to be a meathead...');
-	let regularRole = message.member.guild.roles.find("name", roles.community);   
-	let meetupRole = message.member.guild.roles.find("name", roles.locationVerified);
 	let meetupUser = message.member;
 
 	if (args.length === 0) {
