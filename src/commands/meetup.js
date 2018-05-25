@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const roles = require('../../config/roles.json');
-const channels = require('../../config/channels.json');
 const meetup = require('../features/meetups/meetup.js');
 
 
