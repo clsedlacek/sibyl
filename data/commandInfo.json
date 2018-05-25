@@ -34,7 +34,7 @@
 			"command": "!community [member]",
 			"description": "Add specified member to community role and send welcome/information message",
 			"roleRequired": "operator",
-			"examples": ["!meetup sibyl-oracle#5143"
+			"examples": ["!meetup sibyl-oracle#5143"]
 		}
 	]
 }
