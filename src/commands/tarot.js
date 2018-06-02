@@ -12,5 +12,5 @@ module.exports = (client, message, args) => {
 	console.log('args:');
 	console.dir(args);
 
-	return tarot.sendTarotSpread(message.channel, args[1], args[2]);
+	return tarot.sendTarotSpread(message.channel, args[0], args[1] || undefined);
 };
