@@ -1,3 +1,4 @@
+const tarotConfig = require('../../../config/tarot.json');
 const TarotCard = require('./Card.js');
 
 function createCardData(deckCards) {
@@ -33,14 +34,15 @@ class TarotDeck {
 	}
 	drawRandomCard() {
 		const randomIndex = Math.floor(Math.random() * this.cardsRemaining.length);
-		return this.cardsRemaining.splice(randomIndex, 1);
+		console.log('found random card at '+randomIndex);
+		return this.cardsRemaining.splice(randomIndex, 1)[0];
 	}
 	drawSpecifiedCard(cardName, cardNumber) {
 		for (let i=0; i<this.cardsRemaining.length; i++) {
 			let cardChecking = this.cardsRemaining[i];
 			if ((cardName.toLowerCase() === cardChecking.name.toLowerCase()) && (cardNumber === cardChecking.number)) {
 				console.log('card found');
-				return this.cardsRemaining.splice(i, 1);
+				return this.cardsRemaining.splice(i, 1)[0];
 			}
 		}
 		console.log('card not found');
@@ -50,11 +52,9 @@ class TarotDeck {
 
 module.exports = {
 	TarotDeck,
-	createTarotDeck: function(deckData) {
+	createTarotDeck: function(deckName) {
+		const deckData = require(`../../../data/${tarotConfig.decks[deckName]}`)
 		const deck = new TarotDeck(deckData);
-		deck.shuffle();
-		console.log('cardsRemaining:');
-		console.dir(deck.cardsRemaining);
 		return deck;
 	}
 }
