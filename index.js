@@ -33,5 +33,6 @@ client.on('guildMemberAdd', member => require('./src/events/guildMemberAdd.js')(
 client.on('messageReactionAdd', (reaction, user) => require('./src/events/messageReactionAdd.js')(client, reaction, user));
 client.login(config.token);
 
+httpServer.use(express.static('public'));
 httpServer.get('/', (req, res) => res.send('HTTP server working'));
 httpServer.listen(httpPort, () => console.log(`HTTP server listening on port ${httpPort}`));
