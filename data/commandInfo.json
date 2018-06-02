@@ -38,7 +38,7 @@
 		},
 		{
 			"command": "!tarot [spread] [deck]",
-			"description": "Create a tarot spread",
+			"description": "Create a tarot spread (will use default deck if deck is not specified)",
 			"roleRequired": false,
 			"examples": ["!tarot celticcross riderwaite", "!tarot three riderwaite"]
 		}
