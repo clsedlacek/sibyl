@@ -1,7 +1,14 @@
+// dependencies
 const Discord = require('discord.js');
+const express = require('express');
 const config = require('./config/config.json');
+
+// initialize clients/servers
 const client = new Discord.Client();
-//import modules, creates bot
+const httpServer = express();
+
+// settings
+const httpPort = config.httpPort || process.env.PORT || 3000;
 
 client.config = config;     // so that config file is available to modules. could also merge this line with the dclaration.
 
@@ -24,3 +31,6 @@ client.on('ready', () => require('./src/events/ready.js')(client));
 client.on('guildMemberAdd', member => require('./src/events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./src/events/messageReactionAdd.js')(client, reaction, user));
 client.login(config.token);
+
+httpServer.get('/', (req, res) => res.send('HTTP server working'));
+httpServer.listen(httpPort, () => console.log(`HTTP server listening on port ${httpPort}`));
