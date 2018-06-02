@@ -1,0 +1,11 @@
+{
+	"id": "celticcross",
+	"name": "Celtic Cross Spread",
+	"cards": 10,
+	"layout": [
+		[false, false, false, 10],
+		[false, 5, false, 9],
+		[3, 1, 4, 8],
+		[false, 6, 2, 7]
+	]
+}

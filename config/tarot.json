@@ -3,7 +3,8 @@
 		"riderwaite": "tarot/tarot-riderwaite.json"
 	},
 	"spreads": {
-		"three": "tarot/spread-three.json"
+		"three": "tarot/spread-three.json",
+		"celticcross": "tarot/spread-celtic-cross.json"
 	},
 	"defaultDeck": "riderwaite",
 	"defaultSpread": "three"
