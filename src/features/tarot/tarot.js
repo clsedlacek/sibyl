@@ -83,7 +83,7 @@ function padCell(cellContents) {
  * @returns {string} String message describing tarot spread
  */
 function createSpreadMessage(spread) {
-	let spreadMessage = "```";
+	let spreadMessage = "Here is your tarot spread. *Images coming soon.*\n```";
 
 	for (let r = 0; r < spread.layoutBase.length; r++) {
 		for (let c = 0; c <spread.layoutBase[r].length; c++) {
@@ -114,7 +114,7 @@ module.exports = {
 		return guildChannel.send(spreadMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
-		let helpMessage = `I can draw tarot spreads for you. Please specify a spread and a deck via the \`!tarot\` command in the format \`!tarot [spread] [deck (optional)]\`. Images coming soon!\n\n**Spreads:**\n\`\`\``;
+		let helpMessage = `I can lay tarot spreads for you. Please specify a spread and a deck via the \`!tarot\` command in the format \`!tarot [spread] [deck (optional)]\`. Images coming soon!\n\n**Spreads:**\n\`\`\``;
 		helpMessage += createSpreadList() + "```\n**Decks**\n```";
 		helpMessage += createDeckList() + "```";
 
