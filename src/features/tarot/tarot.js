@@ -114,7 +114,7 @@ module.exports = {
 		return guildChannel.send(spreadMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
-		let helpMessage = `I can lay tarot spreads for you. Please specify a spread and a deck via the \`!tarot\` command in the format \`!tarot [spread] [deck (optional)]\`. Images coming soon!\n\n**Spreads:**\n\`\`\``;
+		let helpMessage = `I can lay tarot spreads for you. Please specify a spread and a deck via the \`!tarot\` command in the format \`!tarot [spread] [deck (optional)]\`. Example: \`!tarot three riderwaite\`. Images coming soon!\n\n**Spreads:**\n\`\`\``;
 		helpMessage += createSpreadList() + "```\n**Decks**\n```";
 		helpMessage += createDeckList() + "```";
 
