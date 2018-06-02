@@ -40,7 +40,7 @@ class TarotDeck {
 	drawSpecifiedCard(cardName, cardNumber) {
 		for (let i=0; i<this.cardsRemaining.length; i++) {
 			let cardChecking = this.cardsRemaining[i];
-			if ((cardName.toLowerCase() === cardChecking.name.toLowerCase()) && (cardNumber === cardChecking.number)) {
+			if ((cardName.toLowerCase() === cardChecking.name.toLowerCase()) && (parseInt(cardNumber) === parseInt(cardChecking.number))) {
 				console.log('card found');
 				return this.cardsRemaining.splice(i, 1)[0];
 			}
