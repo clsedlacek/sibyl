@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 const express = require('express');
 const config = require('./config/config.json');
 
+// set base directory var
+global.__basedir = __dirname;
+
 // initialize clients/servers
 const client = new Discord.Client();
 const httpServer = express();
