@@ -114,7 +114,7 @@ module.exports = {
 		return guildChannel.send(spreadMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
-		let helpMessage = `I can lay tarot spreads for you. Please specify a spread and a deck via the \`!tarot\` command in the format \`!tarot [spread] [deck (optional)]\`. Example: \`!tarot three riderwaite\`. Images coming soon!\n\n**Spreads:**\n\`\`\``;
+		let helpMessage = `I can perform a variety of tarot tasks for you.\n\nIf you wish for me to lay a spread, specify a spread and a deck via the \`!tarot spread\` command in the format \`!tarot spread [spread] [deck]\`. Example: \`!tarot spread three riderwaite\`.\n\nIf you wish for me to pull a specific card for you, specify a card and a deck via the \`!tarot card\` command in the format \`!tarot card [cardname cardnumber] [deck]\`. Example: \`!tarot card The Fool 0 riderwaite\` or \`!tarot card Cups 5 riderwaite\`.\n\nTo see all cards in a deck, use the \`!tarot deck\` command in the format \`!tarot deck [deck]\`. Example: \`!tarot deck riderwaite\`.\nImages coming soon!\n\n**Spreads:**\n\`\`\``;
 		helpMessage += createSpreadList() + "```\n**Decks**\n```";
 		helpMessage += createDeckList() + "```";
 

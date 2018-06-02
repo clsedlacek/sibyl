@@ -12,5 +12,9 @@ module.exports = (client, message, args) => {
 	console.log('args:');
 	console.dir(args);
 
-	return tarot.sendTarotSpread(message.channel, args[0], args[1] || undefined);
+	if (args[0].toLowerCase() === "spread") {
+		return tarot.sendTarotSpread(message.channel, args[1], args[2] || undefined);
+	}
+	else if (args[0].toLowerCase() === "card") {
+	}
 };
