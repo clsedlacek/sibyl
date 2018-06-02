@@ -1,3 +1,5 @@
+const attachmentUtils = require(`${__basedir}/src/functions/attachmentUtils.js`);
+
 class TarotCard {
 	constructor(cardData) {
 		this.number = cardData.number;
@@ -12,6 +14,9 @@ class TarotCard {
 		else {
 			return `${this.number} of ${this.name}`
 		}
+	}
+	getCardImageStream() {
+		return attachmentUtils.createAttachmentStream(`${__publicdir}${this.image}`);
 	}
 }
 

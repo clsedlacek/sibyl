@@ -16,5 +16,10 @@ module.exports = (client, message, args) => {
 		return tarot.sendTarotSpread(message.channel, args[1], args[2] || undefined);
 	}
 	else if (args[0].toLowerCase() === "card") {
+		const deckName = args[1];
+		const cardNumber = args[2];
+		const cardName = args.slice(3).join(' ');;
+
+		return tarot.sendTarotCard(message.channel, deckName, cardNumber, cardName);
 	}
 };
