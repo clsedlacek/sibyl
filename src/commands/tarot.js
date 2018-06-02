@@ -5,7 +5,7 @@ module.exports = (client, message, args) => {
 	console.log('Log', 'tarot spread requested...');
 
 	if (args.length === 0) {
-		tarot.sendFailMessage(message.channel);
+		tarot.sendHelpMessage(message.channel);
 		return
 	};
 
