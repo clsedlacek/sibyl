@@ -6,8 +6,8 @@ class TarotCard {
 		this.image = cardData.image;
 	}
 	getFullCardName() {
-		if (this.arcana.toLowerCase === 'major') {
-			return `${this.number}: ${this.name}`
+		if (this.arcana.toLowerCase() === 'major') {
+			return `${this.name} (${this.number})`
 		}
 		else {
 			return `${this.number} of ${this.name}`
