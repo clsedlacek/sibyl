@@ -69,7 +69,7 @@ module.exports = {
 	TarotSpread,
 	createTarotSpread: function(deckName, spreadName) {
 		console.log('creating spread '+spreadName+' with deck '+deckName);
-		const spreadData = require(`../../../data/${tarotConfig.spreads[spreadName]}`)
+		const spreadData = require(`${__basedir}/data/${tarotConfig.spreads[spreadName]}`)
 		return new TarotSpread(deckName, spreadData);
 	}
 }

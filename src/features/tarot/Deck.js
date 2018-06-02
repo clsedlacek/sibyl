@@ -53,7 +53,7 @@ class TarotDeck {
 module.exports = {
 	TarotDeck,
 	createTarotDeck: function(deckName) {
-		const deckData = require(`../../../data/${tarotConfig.decks[deckName]}`)
+		const deckData = require(`${__basedir}/data/${tarotConfig.decks[deckName]}`)
 		const deck = new TarotDeck(deckData);
 		return deck;
 	}

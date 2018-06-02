@@ -1,5 +1,6 @@
 const TarotSpread = require('./Spread.js');
 const tarotConfig = require('../../../config/tarot.json');
+const attachmentUtils = require('../../functions/attachmentUtils.js');
 const commandInfo = require('../../../data/commandInfo.json');
 
 /**
@@ -12,7 +13,7 @@ function createSpreadList() {
 
 	Object.keys(tarotConfig.spreads).forEach(spreadId => {
 		try {
-			const loadedSpread = require(`../../../data/${tarotConfig.spreads[spreadId]}`);
+			const loadedSpread = require(`${__basedir}/data/${tarotConfig.spreads[spreadId]}`);
 			spreads.push(loadedSpread);
 		}
 		catch(e) {
@@ -38,7 +39,7 @@ function createDeckList() {
 
 	Object.keys(tarotConfig.decks).forEach(deckId => {
 		try {
-			const loadedDeck = require(`../../../data/${tarotConfig.decks[deckId]}`);
+			const loadedDeck = require(`${__basedir}/data/${tarotConfig.decks[deckId]}`);
 			decks.push(loadedDeck);
 		}
 		catch(e) {
@@ -106,12 +107,24 @@ function createSpreadMessage(spread) {
 }
 
 
+function createCardMessage(card) {
+	let cardMessage = `Here is your requested card.\n**${card.getFullCardName()}**\n`;
+	return cardMessage;
+}
+
+
 
 module.exports = {
 	sendTarotSpread: function(guildChannel, spreadType=tarotConfig.defaultSpread, deckName=tarotConfig.defaultDeck) {
 		const spread = TarotSpread.createTarotSpread(deckName, spreadType);
 		const spreadMessage = createSpreadMessage(spread);
 		return guildChannel.send(spreadMessage);
+	},
+	sendTarotCard: function(guildChannel, deckName, cardNumber, cardName) {
+		const deck = TarotDeck.createTarotDeck(deckName);
+		const requestedCard = deck.drawSpecifiedCard(cardNumber, cardName);
+		const cardMessage = createCardMessage(requestedCard);
+		return guildChannel.send(cardMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
 		let helpMessage = `I can perform a variety of tarot tasks for you.\n\nIf you wish for me to lay a spread, specify a spread and a deck via the \`!tarot spread\` command in the format \`!tarot spread [spread] [deck]\`. Example: \`!tarot spread three riderwaite\`.\n\nIf you wish for me to pull a specific card for you, specify a card and a deck via the \`!tarot card\` command in the format \`!tarot card [cardname cardnumber] [deck]\`. Example: \`!tarot card The Fool 0 riderwaite\` or \`!tarot card Cups 5 riderwaite\`.\n\nTo see all cards in a deck, use the \`!tarot deck\` command in the format \`!tarot deck [deck]\`. Example: \`!tarot deck riderwaite\`.\nImages coming soon!\n\n**Spreads:**\n\`\`\``;
