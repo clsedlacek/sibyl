@@ -9,6 +9,7 @@ const httpServer = express();
 
 // settings
 const httpPort = config.httpPort || process.env.PORT || 3000;
+const apiIp = config.apiIp || 'localhost';
 
 client.config = config;     // so that config file is available to modules. could also merge this line with the dclaration.
 
