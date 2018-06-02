@@ -1,0 +1,8 @@
+{
+	"decks": [
+		"riderwaite": {
+			"name": "Rider Waite"
+		}
+	],
+	"defaultDeck": "raiderwaite"
+}
