@@ -1,6 +1,10 @@
 {
 	"decks": {
-		"riderwaite": "tarot-riderwaite.json"
+		"riderwaite": "tarot/tarot-riderwaite.json"
 	},
-	"defaultDeck": "riderwaite"
+	"spreads": {
+		"three": "tarot/spread-three.json"
+	},
+	"defaultDeck": "riderwaite",
+	"defaultSpread": "three"
 }
