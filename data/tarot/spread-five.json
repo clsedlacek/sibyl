@@ -1,0 +1,9 @@
+{
+	"id": "five",
+	"name": "Five Card Spread",
+	"cards": 5,
+	"layout": [
+		[1, 2, 3, 4, 5]
+	]
+}
+
