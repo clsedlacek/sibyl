@@ -1,8 +1,6 @@
 {
 	"decks": [
-		"riderwaite": {
-			"name": "Rider Waite"
-		}
+		"tarot-riderwaite.json"
 	],
 	"defaultDeck": "raiderwaite"
 }

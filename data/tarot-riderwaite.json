@@ -1,0 +1,474 @@
+{
+	"id": "riderwaite":,
+	"name": "Rider Waite",
+	"cards": [
+		{
+			"number": 0,
+			"arcana": "Major",
+			"name": "The Fool",
+			"image": "/images/tarot/rider-waite/rw-00-the-fool.jpg"
+		},
+		{
+			"number": 1,
+			"arcana": "Major",
+			"name": "The Magician",
+			"image": "/images/tarot/rider-waite/rw-01-the-magician.jpg"
+		},
+		{
+			"number": 2,
+			"arcana": "Major",
+			"name": "The High Priestess",
+			"image": "/images/tarot/rider-waite/rw-02-the-high-priestess.jpg"
+		},
+		{
+			"number": 3,
+			"arcana": "Major",
+			"name": "The Empress",
+			"image": "/images/tarot/rider-waite/rw-03-the-empress.jpg"
+		},
+		{
+			"number": 4,
+			"arcana": "Major",
+			"name": "The Emperor",
+			"image": "/images/tarot/rider-waite/rw-04-the-emperor.jpg"
+		},
+		{
+			"number": 5,
+			"arcana": "Major",
+			"name": "The Hierophant",
+			"image": "/images/tarot/rider-waite/rw-05-the-hierophant.jpg"
+		},
+		{
+			"number": 6,
+			"arcana": "Major",
+			"name": "The Lovers",
+			"image": "/images/tarot/rider-waite/rw-06-the-lovers.jpg"
+		},
+		{
+			"number": 7,
+			"arcana": "Major",
+			"name": "The Chariot",
+			"image": "/images/tarot/rider-waite/rw-07-the-chariot.jpg"
+		},
+		{
+			"number": 8,
+			"arcana": "Major",
+			"name": "Strength",
+			"image": "/images/tarot/rider-waite/rw-08-strength.jpg"
+		},
+		{
+			"number": 9,
+			"arcana": "Major",
+			"name": "The Hermit",
+			"image": "/images/tarot/rider-waite/rw-09-the-hermit.jpg"
+		},
+		{
+			"number": 10,
+			"arcana": "Major",
+			"name": "Wheel Of Fortune",
+			"image": "/images/tarot/rider-waite/rw-10-wheel-of-fortune.jpg"
+		},
+		{
+			"number": 11,
+			"arcana": "Major",
+			"name": "Justice",
+			"image": "/images/tarot/rider-waite/rw-11-justice.jpg"
+		},
+		{
+			"number": 12,
+			"arcana": "Major",
+			"name": "The Hanged Man",
+			"image": "/images/tarot/rider-waite/rw-12-the-hanged-man.jpg"
+		},
+		{
+			"number": 13,
+			"arcana": "Major",
+			"name": "Death",
+			"image": "/images/tarot/rider-waite/rw-13-death.jpg"
+		},
+		{
+			"number": 14,
+			"arcana": "Major",
+			"name": "Temperance",
+			"image": "/images/tarot/rider-waite/rw-14-temperance.jpg"
+		},
+		{
+			"number": 15,
+			"arcana": "Major",
+			"name": "The Devil",
+			"image": "/images/tarot/rider-waite/rw-15-the-devil.jpg"
+		},
+		{
+			"number": 16,
+			"arcana": "Major",
+			"name": "The Tower",
+			"image": "/images/tarot/rider-waite/rw-16-the-tower.jpg"
+		},
+		{
+			"number": 17,
+			"arcana": "Major",
+			"name": "The Star",
+			"image": "/images/tarot/rider-waite/rw-17-the-star.jpg"
+		},
+		{
+			"number": 18,
+			"arcana": "Major",
+			"name": "The Moon",
+			"image": "/images/tarot/rider-waite/rw-18-the-moon.jpg"
+		},
+		{
+			"number": 19,
+			"arcana": "Major",
+			"name": "The Sun",
+			"image": "/images/tarot/rider-waite/rw-19-the-sun.jpg"
+		},
+		{
+			"number": 20,
+			"arcana": "Major",
+			"name": "Judgement",
+			"image": "/images/tarot/rider-waite/rw-20-judgement.jpg"
+		},
+		{
+			"number": 21,
+			"arcana": "Major",
+			"name": "The World",
+			"image": "/images/tarot/rider-waite/rw-21-the-world.jpg"
+		},
+		{
+			"number": 1,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-01.jpg"
+		},
+		{
+			"number": 2,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-02.jpg"
+		},
+		{
+			"number": 3,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-03.jpg"
+		},
+		{
+			"number": 4,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-04.jpg"
+		},
+		{
+			"number": 5,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-05.jpg"
+		},
+		{
+			"number": 6,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-06.jpg"
+		},
+		{
+			"number": 7,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-07.jpg"
+		},
+		{
+			"number": 8,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-08.jpg"
+		},
+		{
+			"number": 9,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-09.jpg"
+		},
+		{
+			"number": 10,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-10.jpg"
+		},
+		{
+			"number": 11,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-11.jpg"
+		},
+		{
+			"number": 12,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-12.jpg"
+		},
+		{
+			"number": 13,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-13.jpg"
+		},
+		{
+			"number": 14,
+			"arcana": "Minor",
+			"name": "Cups",
+			"image": "/images/tarot/rider-waite/rw-cups-14.jpg"
+		},
+		{
+			"number": 1,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-01.jpg"
+		},
+		{
+			"number": 2,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-02.jpg"
+		},
+		{
+			"number": 3,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-03.jpg"
+		},
+		{
+			"number": 4,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-04.jpg"
+		},
+		{
+			"number": 5,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-05.jpg"
+		},
+		{
+			"number": 6,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-06.jpg"
+		},
+		{
+			"number": 7,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-07.jpg"
+		},
+		{
+			"number": 8,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-08.jpg"
+		},
+		{
+			"number": 9,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-09.jpg"
+		},
+		{
+			"number": 10,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-10.jpg"
+		},
+		{
+			"number": 11,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-11.jpg"
+		},
+		{
+			"number": 12,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-12.jpg"
+		},
+		{
+			"number": 13,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-13.jpg"
+		},
+		{
+			"number": 14,
+			"arcana": "Minor",
+			"name": "Pentacles",
+			"image": "/images/tarot/rider-waite/rw-pentacles-14.jpg"
+		},
+		{
+			"number": 1,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-01.jpg"
+		},
+		{
+			"number": 2,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-02.jpg"
+		},
+		{
+			"number": 3,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-03.jpg"
+		},
+		{
+			"number": 4,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-04.jpg"
+		},
+		{
+			"number": 5,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-05.jpg"
+		},
+		{
+			"number": 6,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-06.jpg"
+		},
+		{
+			"number": 7,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-07.jpg"
+		},
+		{
+			"number": 8,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-08.jpg"
+		},
+		{
+			"number": 9,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-09.jpg"
+		},
+		{
+			"number": 10,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-10.jpg"
+		},
+		{
+			"number": 11,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-11.jpg"
+		},
+		{
+			"number": 12,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-12.jpg"
+		},
+		{
+			"number": 13,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-13.jpg"
+		},
+		{
+			"number": 14,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-14.jpg"
+		},
+		{
+			"number": 1,
+			"arcana": "Minor",
+			"name": "Wands",
+			"image": "/images/tarot/rider-waite/rw-wands-01.jpg"
+		},
+		{
+			"number": 2,
+			"arcana": "Minor",
+			"name": "Wands",
+			"image": "/images/tarot/rider-waite/rw-wands-02.jpg"
+		},
+		{
+			"number": 3,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-03.jpg"
+		},
+		{
+			"number": 4,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-04.jpg"
+		},
+		{
+			"number": 5,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-05.jpg"
+		},
+		{
+			"number": 6,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-06.jpg"
+		},
+		{
+			"number": 7,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-07.jpg"
+		},
+		{
+			"number": 8,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-08.jpg"
+		},
+		{
+			"number": 9,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-09.jpg"
+		},
+		{
+			"number": 10,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-10.jpg"
+		},
+		{
+			"number": 11,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-11.jpg"
+		},
+		{
+			"number": 12,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-12.jpg"
+		},
+		{
+			"number": 13,
+			"arcana": "Minor",
+			"name": "Swords",
+			"image": "/images/tarot/rider-waite/rw-swords-13.jpg"
+		},
+		{
+			"number": 14,
+			"arcana": "Minor",
+			"name": "Wands",
+			"image": "/images/tarot/rider-waite/rw-wands-14.jpg"
+		}
+	]
+}
