@@ -88,6 +88,14 @@ function padCell(cellContents) {
 function createSpreadMessage(spread) {
 	let spreadMessage = "Here is your tarot spread. *Images coming soon.*\n```";
 
+	if (spread.querying.length) {
+		spreadMessage += `The following card(s) are set aside as querents:\n`;
+		spread.querying.forEach(card => {
+			spreadMessage += `| ${card.getFullCardName()} |`;
+		});
+		spreadMessage += "\n\n";
+	}
+
 	for (let r = 0; r < spread.layoutBase.length; r++) {
 		for (let c = 0; c <spread.layoutBase[r].length; c++) {
 			let cellNumber = spread.layoutBase[r][c];
@@ -131,11 +139,16 @@ function createDeckMessage(deck) {
 
 
 module.exports = {
-	sendTarotSpread: function(guildChannel, spreadType, deckName) {
+	sendTarotSpread: function(guildChannel, spreadType, deckName, queryNumber, queryName) {
 		let spread, spreadMessage;
 
 		try {
 			spread = TarotSpread.createTarotSpread(deckName, spreadType);
+			if (queryNumber && queryName) {
+				console.log('querying card '+queryNumber+' '+queryName);
+				spread.queryCard(queryNumber, queryName);
+			}
+			spread.populateSpread();
 		}
 		catch (e) {
 			console.error('error finding tarot spread: '+e);
@@ -198,11 +211,11 @@ module.exports = {
 		return guildChannel.send(helpMessage);
 	},
 	sendSpreadHelpMessage: function(guildChannel) {
-		let helpMessage = `I could not create the spread you requested. Be sure to specify a spread in the format \`!tarot spread [deck] [spread]\`. An example: to create a celtic cross spread with the Rider Waite deck, use \`!tarot spread celticcross riderwaite\`.\n\nHere is a list of spreads available to me:\n\n\`\`\`${createSpreadList()}\`\`\`\nHere is a list of decks available to me:\n\`\`\`${createDeckList()}\`\`\``;
+		let helpMessage = `I could not create the spread you requested. Be sure to specify a spread in the format \`!tarot spread [deck] [spread] [querent card number (optional)] [querent card name (optional)]\`. An example: to create a celtic cross spread with the Rider Waite deck, use \`!tarot spread celticcross riderwaite\`. To create a three-card spread with the Rider Waite deck and The Fool set aside as a querent, use \`!tarot spread three riderwaite 0 The Fool\`.\n\nHere is a list of spreads available to me:\n\n\`\`\`${createSpreadList()}\`\`\`\nHere is a list of decks available to me:\n\`\`\`${createDeckList()}\`\`\``;
 		return guildChannel.send(helpMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
-		let helpMessage = `I can perform a variety of tarot tasks for you.\n\nIf you wish for me to lay a spread, specify a spread and a deck via the \`!tarot spread\` command in the format \`!tarot spread [spread] [deck]\`. Example: \`!tarot spread three riderwaite\`.\n\nIf you wish for me to pull a specific card for you, specify a card and a deck via the \`!tarot card\` command in the format \`!tarot card [deck] [card number] [card name for major arcana or card suit]\`. Example: \`!tarot card riderwaite 0 The Fool\` or \`!tarot card riderwaite 5 Cups\`.\n\nTo see all cards in a deck, use the \`!tarot deck\` command in the format \`!tarot deck [deck]\`. Example: \`!tarot deck riderwaite\`.\nImages coming soon!\n\n**Spreads:**\n\`\`\``;
+		let helpMessage = `I can perform a variety of tarot tasks for you.\n\nIf you wish for me to lay a spread, specify a spread and a deck via the \`!tarot spread\` command in the format \`!tarot spread [spread] [deck] [querent card number (optional)] [querent card name (optional)]\`. Example: \`!tarot spread three riderwaite\` or \`!tarot spread celticcross riderwaite 1 The Magician\`..\n\nIf you wish for me to pull a specific card for you, specify a card and a deck via the \`!tarot card\` command in the format \`!tarot card [deck] [card number] [card name for major arcana or card suit]\`. Example: \`!tarot card riderwaite 0 The Fool\` or \`!tarot card riderwaite 5 Cups\`.\n\nTo see all cards in a deck, use the \`!tarot deck\` command in the format \`!tarot deck [deck]\`. Example: \`!tarot deck riderwaite\`.\nImages coming soon!\n\n**Spreads:**\n\`\`\``;
 		helpMessage += createSpreadList() + "```\n**Decks**\n```";
 		helpMessage += createDeckList() + "```";
 

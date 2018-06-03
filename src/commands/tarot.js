@@ -9,12 +9,14 @@ module.exports = (client, message, args) => {
 	};
 
 	if (args[0].toLowerCase() === "spread") {
-		return tarot.sendTarotSpread(message.channel, args[1], args[2]);
+		const queryNumber = args[3];
+		const queryName = args.slice(4).join(' ');
+		return tarot.sendTarotSpread(message.channel, args[1], args[2], queryNumber, queryName);
 	}
 	else if (args[0].toLowerCase() === "card") {
 		const deckName = args[1];
 		const cardNumber = args[2];
-		const cardName = args.slice(3).join(' ');;
+		const cardName = args.slice(3).join(' ');
 
 		return tarot.sendTarotCard(message.channel, deckName, cardNumber, cardName);
 	}

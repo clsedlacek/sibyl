@@ -58,10 +58,22 @@ class TarotSpread {
 	constructor(deckName, spreadData) {
 		this.deck = TarotDeck.createTarotDeck(deckName);
 		this.deck.shuffle();
+		this.querying = [];
 		this.layoutBase = spreadData.layout;
 		this.spreadCards = createCardSpread(spreadData, this.deck);
-		this.spreadLayout = createSpreadLayout(this.spreadCards, this.layoutBase);
+		this.spreadLayout;
 		this.spreadImage;
+	}
+	queryCard(cardNumber, cardName) {
+		const queryCard = this.deck.drawSpecifiedCard(cardName, cardNumber);
+		if (queryCard) {
+			this.querying.push(queryCard);
+			return queryCard;
+		}
+		return null;
+	}
+	populateSpread() {
+		this.spreadLayout = createSpreadLayout(this.spreadCards, this.layoutBase);
 	}
 }
 
