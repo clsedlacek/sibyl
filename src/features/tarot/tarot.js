@@ -50,7 +50,7 @@ function createDeckList() {
 	});
 
 	decks.forEach(deckData => {
-		deckList += `${deckData.id} - ${deckData.name}${tarotConfig.defaultDeck === deckData.id ? " (default)" : ""}\n`;
+		deckList += `${deckData.id} - ${deckData.name}\n`;
 	});
 
 	return deckList;
