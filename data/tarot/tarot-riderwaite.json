@@ -160,7 +160,7 @@
 			"number": 1,
 			"arcana": "Minor",
 			"name": "Cups",
-			"displayName": "1 of Cups",
+			"displayName": "Ace of Cups",
 			"image": "/images/tarot/rider-waite/rw-cups-01.jpg"
 		},
 		{
@@ -258,7 +258,7 @@
 			"number": 1,
 			"arcana": "Minor",
 			"name": "Pentacles",
-			"displayName": "1 of Pentacles",
+			"displayName": "Ace of Pentacles",
 			"image": "/images/tarot/rider-waite/rw-pentacles-01.jpg"
 		},
 		{
@@ -356,7 +356,7 @@
 			"number": 1,
 			"arcana": "Minor",
 			"name": "Swords",
-			"displayName": "1 of Swords",
+			"displayName": "Ace of Swords",
 			"image": "/images/tarot/rider-waite/rw-swords-01.jpg"
 		},
 		{
@@ -454,7 +454,7 @@
 			"number": 1,
 			"arcana": "Minor",
 			"name": "Wands",
-			"displayName": "1 of Wands",
+			"displayName": "Ace of Wands",
 			"image": "/images/tarot/rider-waite/rw-wands-01.jpg"
 		},
 		{
@@ -467,77 +467,77 @@
 		{
 			"number": 3,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "3 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-03.jpg"
 		},
 		{
 			"number": 4,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "4 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-04.jpg"
 		},
 		{
 			"number": 5,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "5 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-05.jpg"
 		},
 		{
 			"number": 6,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "6 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-06.jpg"
 		},
 		{
 			"number": 7,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "7 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-07.jpg"
 		},
 		{
 			"number": 8,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "8 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-08.jpg"
 		},
 		{
 			"number": 9,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "9 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-09.jpg"
 		},
 		{
 			"number": 10,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "10 of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-10.jpg"
 		},
 		{
 			"number": 11,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "Page of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-11.jpg"
 		},
 		{
 			"number": 12,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "Knight of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-12.jpg"
 		},
 		{
 			"number": 13,
 			"arcana": "Minor",
-			"name": "Swords",
+			"name": "Wands",
 			"displayName": "Queen of Wands",
 			"image": "/images/tarot/rider-waite/rw-swords-13.jpg"
 		},
