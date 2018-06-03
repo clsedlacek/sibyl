@@ -1,6 +1,7 @@
 {
 	"decks": {
-		"riderwaite": "tarot/tarot-riderwaite.json"
+		"riderwaite": "tarot/tarot-riderwaite.json",
+		"thoth": "tarot/tarot-thoth.json"
 	},
 	"spreads": {
 		"one": "tarot/spread-one.json",
