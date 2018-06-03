@@ -1,0 +1,8 @@
+{
+	"id": "two",
+	"name": "Two Card Spread",
+	"cards": 2,
+	"layout": [
+		[1, 2]
+	]
+}

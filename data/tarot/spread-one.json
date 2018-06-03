@@ -1,0 +1,9 @@
+{
+	"id": "one",
+	"name": "Random Card",
+	"cards": 1,
+	"layout": [
+		[1]
+	]
+}
+

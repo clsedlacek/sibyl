@@ -3,6 +3,8 @@
 		"riderwaite": "tarot/tarot-riderwaite.json"
 	},
 	"spreads": {
+		"one": "tarot/spread-one.json",
+		"two": "tarot/spread-two.json",
 		"three": "tarot/spread-three.json",
 		"four": "tarot/spread-four.json",
 		"five": "tarot/spread-five.json",
