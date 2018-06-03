@@ -5,15 +5,11 @@ module.exports = (client, message, args) => {
 	console.log('Log', 'tarot spread requested...');
 
 	if (args.length === 0) {
-		tarot.sendHelpMessage(message.channel);
-		return
+		return tarot.sendHelpMessage(message.channel);
 	};
 
-	console.log('args:');
-	console.dir(args);
-
 	if (args[0].toLowerCase() === "spread") {
-		return tarot.sendTarotSpread(message.channel, args[1], args[2] || undefined);
+		return tarot.sendTarotSpread(message.channel, args[1], args[2]);
 	}
 	else if (args[0].toLowerCase() === "card") {
 		const deckName = args[1];
@@ -25,5 +21,8 @@ module.exports = (client, message, args) => {
 	else if (args[0].toLowerCase() === "deck") {
 		const deckName = args[1];
 		return tarot.sendTarotDeckList(message.channel, deckName);
+	}
+	else {
+		return tarot.sendHelpMessage(message.channel);
 	}
 };

@@ -131,9 +131,19 @@ function createDeckMessage(deck) {
 
 
 module.exports = {
-	sendTarotSpread: function(guildChannel, spreadType=tarotConfig.defaultSpread, deckName=tarotConfig.defaultDeck) {
-		const spread = TarotSpread.createTarotSpread(deckName, spreadType);
-		const spreadMessage = createSpreadMessage(spread);
+	sendTarotSpread: function(guildChannel, spreadType, deckName) {
+		let spread, spreadMessage;
+
+		try {
+			spread = TarotSpread.createTarotSpread(deckName, spreadType);
+		}
+		catch (e) {
+			console.error('error finding tarot spread: '+e);
+			return module.exports.sendSpreadHelpMessage(guildChannel);
+		}
+
+		spreadMessage = createSpreadMessage(spread);
+
 		return guildChannel.send(spreadMessage);
 	},
 	sendTarotCard: function(guildChannel, deckName, cardNumber, cardName) {
@@ -172,7 +182,9 @@ module.exports = {
 		else {
 			const deckMessageArray = createDeckMessage(deck);
 			deckMessageArray.forEach(message => {
-				deckMessageEvents.push(guildChannel.send(message));
+				if (message.length) {
+					deckMessageEvents.push(guildChannel.send(message));
+				}
 			});
 			return Promise.all(deckMessageEvents);
 		}
@@ -183,6 +195,10 @@ module.exports = {
 	},
 	sendDeckHelpMessage: function(guildChannel) {
 		let helpMessage = `I could not find the deck you requested. Be sure to specify a deck in the format \`!tarot deck [deck]\`. An example: to examine the Rider Waite deck, use \`!tarot deck riderwaite\`. Here is a list of decks available to me:\n\n${createDeckList()}`;
+		return guildChannel.send(helpMessage);
+	},
+	sendSpreadHelpMessage: function(guildChannel) {
+		let helpMessage = `I could not create the spread you requested. Be sure to specify a spread in the format \`!tarot spread [deck] [spread]\`. An example: to create a celtic cross spread with the Rider Waite deck, use \`!tarot spread celticcross riderwaite\`.\n\nHere is a list of spreads available to me:\n\n\`\`\`${createSpreadList()}\`\`\`\nHere is a list of decks available to me:\n\`\`\`${createDeckList()}\`\`\``;
 		return guildChannel.send(helpMessage);
 	},
 	sendHelpMessage:function (guildChannel) {
