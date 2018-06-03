@@ -88,14 +88,6 @@ function padCell(cellContents) {
 function createSpreadMessage(spread) {
 	let spreadMessage = "Here is your tarot spread. *Images coming soon.*\n```";
 
-	if (spread.querying.length) {
-		spreadMessage += `The following card(s) are set aside as querents:\n`;
-		spread.querying.forEach(card => {
-			spreadMessage += `| ${card.getFullCardName()} |`;
-		});
-		spreadMessage += "\n\n";
-	}
-
 	for (let r = 0; r < spread.layoutBase.length; r++) {
 		for (let c = 0; c <spread.layoutBase[r].length; c++) {
 			let cellNumber = spread.layoutBase[r][c];
@@ -105,6 +97,14 @@ function createSpreadMessage(spread) {
 	}
 
 	spreadMessage += "\n";
+
+	if (spread.querying.length) {
+		spreadMessage += `The following card(s) are set aside as querents:\n`;
+		spread.querying.forEach(card => {
+			spreadMessage += `| ${card.getFullCardName()} |`;
+		});
+		spreadMessage += "\n\n";
+	}
 
 	for (let i = 0; i < spread.spreadCards.length; i++) {
 		let current = spread.spreadCards[i];
