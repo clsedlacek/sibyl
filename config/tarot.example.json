@@ -7,7 +7,5 @@
 		"four": "tarot/spread-four.json",
 		"five": "tarot/spread-five.json",
 		"celticcross": "tarot/spread-celtic-cross.json"
-	},
-	"defaultDeck": "riderwaite",
-	"defaultSpread": "three"
+	}
 }
