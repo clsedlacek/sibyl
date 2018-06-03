@@ -108,7 +108,7 @@ function createSpreadMessage(spread) {
 
 	for (let i = 0; i < spread.spreadCards.length; i++) {
 		let current = spread.spreadCards[i];
-		spreadMessage += `${i+1}: ${current.getFullCardName()}\n`
+		spreadMessage += `${i+1}- ${current.getFullCardName()}\n`
 	}
 
 	spreadMessage += "```";

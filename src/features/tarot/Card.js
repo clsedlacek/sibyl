@@ -5,9 +5,13 @@ class TarotCard {
 		this.number = cardData.number;
 		this.arcana = cardData.arcana;
 		this.name = cardData.name;
+		this.displayName = cardData.displayName;
 		this.image = cardData.image;
 	}
 	getFullCardName() {
+		if (this.displayName) {
+			return this.displayName;
+		}
 		if (this.arcana.toLowerCase() === 'major') {
 			return `${this.name} (${this.number})`
 		}
