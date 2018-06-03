@@ -2,6 +2,7 @@ const TarotSpread = require('./Spread.js');
 const TarotDeck = require('./Deck.js');
 const tarotConfig = require('../../../config/tarot.json');
 const attachmentUtils = require('../../functions/attachmentUtils.js');
+const stringUtils = require('../../functions/stringUtils.js');
 const commandInfo = require('../../../data/commandInfo.json');
 
 /**
@@ -113,6 +114,20 @@ function createCardMessage(card) {
 	return cardMessage;
 }
 
+function createDeckMessage(deck) {
+	let deckMessage = `Here is the deck you requested to example.\n\n**${deck.name}**\n`;
+	let deckMessageArray = [];
+	let messageShortEnough = false;
+
+	deck.cardsBase.forEach(card => {
+		deckMessage += `${card.number} - ${card.name}\n`;
+	});
+
+	deckMessageArray = stringUtils.splitMessageDiscordLimit(deckMessage);
+
+	return deckMessageArray;
+}
+
 
 
 module.exports = {
@@ -140,8 +155,34 @@ module.exports = {
 			return guildChannel.send(cardMessage, {files: [`${__publicdir}${requestedCard.image}`]});
 		}
 	},
+	sendTarotDeckList: function(guildChannel, deckName) {
+		let deckMessageEvents = [], deck;
+
+		try {
+			deck = TarotDeck.createTarotDeck(deckName);
+		}
+		catch (e) {
+			console.error('error finding tarot deck: '+e);
+			return module.exports.sendDeckHelpMessage(guildChannel);
+		}
+
+		if (!deck) {
+			return module.exports.sendDeckHelpMessage(guildChannel);
+		}
+		else {
+			const deckMessageArray = createDeckMessage(deck);
+			deckMessageArray.forEach(message => {
+				deckMessageEvents.push(guildChannel.send(message));
+			});
+			return Promise.all(deckMessageEvents);
+		}
+	},
 	sendCardHelpMessage: function(guildChannel) {
 		let helpMessage = `I could not find the card you requested. Be sure to specify a deck and a card in the format \`!tarot card [deck] [card number] [card name for major arcana, or card suit]\`. An example: to find The World in the Rider Waite deck, use \`!tarot card riderwaite 21 the world\`. To find the 5 of Cups in the Rider Waite deck, use \`!tarot card riderwaite 5 cups\`.`;
+		return guildChannel.send(helpMessage);
+	},
+	sendDeckHelpMessage: function(guildChannel) {
+		let helpMessage = `I could not find the deck you requested. Be sure to specify a deck in the format \`!tarot deck [deck]\`. An example: to examine the Rider Waite deck, use \`!tarot deck riderwaite\`. Here is a list of decks available to me:\n\n${createDeckList()}`;
 		return guildChannel.send(helpMessage);
 	},
 	sendHelpMessage:function (guildChannel) {

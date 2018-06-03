@@ -22,4 +22,8 @@ module.exports = (client, message, args) => {
 
 		return tarot.sendTarotCard(message.channel, deckName, cardNumber, cardName);
 	}
+	else if (args[0].toLowerCase() === "deck") {
+		const deckName = args[1];
+		return tarot.sendTarotDeckList(message.channel, deckName);
+	}
 };
