@@ -60,6 +60,7 @@ class TarotSpread {
 		this.deck.shuffle();
 		this.querying = [];
 		this.layoutBase = spreadData.layout;
+		this.imageBase = spreadData.layoutImage;
 		this.spreadCards = createCardSpread(spreadData, this.deck);
 		this.spreadLayout;
 		this.spreadImage;
