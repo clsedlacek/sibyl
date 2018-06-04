@@ -5,3 +5,5 @@ Sibyl is designed to be very kind and makes sure everyone's voice is heard. Siby
 This bot is based on <evie.codes>'s tutorial series. We miss you, evie:
 
 https://www.youtube.com/channel/UCvQubaJPD0D-PSokbd5DAiw/videos
+
+This bot requires the installation of Imagemagick and Graphicsmagick, and currently runs on Linux or OS X.
