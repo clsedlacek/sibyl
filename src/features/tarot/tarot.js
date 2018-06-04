@@ -99,7 +99,7 @@ function createSpreadMessage(spread) {
 	spreadMessage += "\n";
 
 	if (spread.querying.length) {
-		spreadMessage += `The following card(s) are set aside as querents:\n`;
+		spreadMessage += `The following card is set aside as the querent:\n`;
 		spread.querying.forEach(card => {
 			spreadMessage += `| ${card.getFullCardName()} |`;
 		});
