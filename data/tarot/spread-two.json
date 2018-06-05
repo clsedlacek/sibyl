@@ -19,7 +19,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "1"
 			},
 			{
 				"placement": {
@@ -29,7 +30,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "2"
 			}
 		]
 	}

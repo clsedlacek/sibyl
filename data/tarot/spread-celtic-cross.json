@@ -22,7 +22,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "1: The present"
 			},
 			{
 				"placement": {
@@ -32,7 +33,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "2: The challenge"
 			},
 			{
 				"placement": {
@@ -42,7 +44,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "3: The past"
 			},
 			{
 				"placement": {
@@ -52,7 +55,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "4: The future"
 			},
 			{
 				"placement": {
@@ -62,7 +66,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "5: Above"
 			},
 			{
 				"placement": {
@@ -72,7 +77,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "6: Below"
 			},
 			{
 				"placement": {
@@ -82,7 +88,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "7: Advice"
 			},
 			{
 				"placement": {
@@ -92,7 +99,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "8: External influences"
 			},
 			{
 				"placement": {
@@ -102,7 +110,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "9: Hopes or fears"
 			},
 			{
 				"placement": {
@@ -112,7 +121,8 @@
 				"size": {
 					"height": 210,
 					"width": false
-				}
+				},
+				"label": "10: Outcome"
 			}
 		]
 	}
