@@ -63,7 +63,6 @@ class TarotSpread {
 		this.imageBase = spreadData.layoutImage;
 		this.spreadCards = createCardSpread(spreadData, this.deck);
 		this.spreadLayout;
-		this.spreadImage;
 	}
 	queryCard(cardNumber, cardName) {
 		const queryCard = this.deck.drawSpecifiedCard(cardName, cardNumber);

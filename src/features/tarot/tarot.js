@@ -1,4 +1,5 @@
 const TarotSpread = require('./Spread.js');
+const SpreadImage = require('./SpreadImage.js');
 const TarotDeck = require('./Deck.js');
 const tarotConfig = require('../../../config/tarot.json');
 const attachmentUtils = require('../../functions/attachmentUtils.js');
@@ -149,15 +150,18 @@ module.exports = {
 				spread.queryCard(queryNumber, queryName);
 			}
 			spread.populateSpread();
+			console.log('spread populated');
+			return SpreadImage.createSpreadImage(spread)
+			.then(spreadImagePath => {
+				console.log('image created');
+				spreadMessage = createSpreadMessage(spread, spreadImagePath);
+				return guildChannel.send(spreadMessage);
+			});
 		}
 		catch (e) {
 			console.error('error finding tarot spread: '+e);
 			return module.exports.sendSpreadHelpMessage(guildChannel);
 		}
-
-		spreadMessage = createSpreadMessage(spread);
-
-		return guildChannel.send(spreadMessage);
 	},
 	sendTarotCard: function(guildChannel, deckName, cardNumber, cardName) {
 		let deck, requestedCard;
