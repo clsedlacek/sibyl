@@ -4,5 +4,33 @@
 	"cards": 2,
 	"layout": [
 		[1, 2]
-	]
+	],
+	"layoutImage": {
+		"size": {
+			"height": 300,
+			"width": 400
+		},
+		"cards": [
+			{
+				"placement": {
+					"x": 35,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			},
+			{
+				"placement": {
+					"x": 235,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			}
+		]
+	}
 }
