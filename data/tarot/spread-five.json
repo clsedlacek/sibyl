@@ -4,6 +4,64 @@
 	"cards": 5,
 	"layout": [
 		[1, 2, 3, 4, 5]
-	]
+	],
+	"layoutImage": {
+		"size": {
+			"height": 300,
+			"width": 1000
+		},
+		"cards": [
+			{
+				"placement": {
+					"x": 35,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			},
+			{
+				"placement": {
+					"x": 235,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			},
+			{
+				"placement": {
+					"x": 435,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			},
+			{
+				"placement": {
+					"x": 635,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			},
+			{
+				"placement": {
+					"x": 835,
+					"y":45
+				},
+				"size": {
+					"height": 210,
+					"width": false
+				}
+			}
+		]
+	}
 }
 
