@@ -87,7 +87,7 @@ function padCell(cellContents) {
  * @returns {string} String message describing tarot spread
  */
 function createSpreadMessage(spread) {
-	let spreadMessage = "Here is your tarot spread. *Images coming soon.*\n```";
+	let spreadMessage = "Here is your tarot spread. *Images will be stored for 30 days.*\n```";
 
 	for (let r = 0; r < spread.layoutBase.length; r++) {
 		for (let c = 0; c <spread.layoutBase[r].length; c++) {
@@ -154,8 +154,8 @@ module.exports = {
 			return SpreadImage.createSpreadImage(spread)
 			.then(spreadImagePath => {
 				console.log('image created');
-				spreadMessage = createSpreadMessage(spread, spreadImagePath);
-				return guildChannel.send(spreadMessage);
+				spreadMessage = createSpreadMessage(spread);
+				return guildChannel.send(spreadMessage, {files: [spreadImagePath]});
 			});
 		}
 		catch (e) {
