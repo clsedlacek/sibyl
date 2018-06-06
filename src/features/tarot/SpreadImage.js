@@ -12,10 +12,11 @@ class SpreadImage {
 		const commands = [
 			'gm',
 			'convert',
-			'-size', `${this.spread.imageBase.size.width+500}x${this.spread.imageBase.size.height}`,
+			'-size', `${this.spread.imageBase.size.width+500}x${this.spread.imageBase.size.height+500}`,
 			`xc:'#FFFFFF'`
 		];
 
+		// base card layering
 		this.spread.imageBase.cards.forEach((cardImageData, index) => {
 			const currentCard = this.spread.spreadCards[index];
 			commands.push('-resize');
@@ -25,7 +26,21 @@ class SpreadImage {
 			commands.push(`${__publicdir}${currentCard.image}`);
 		});
 
+		// querent stuff
+		if (this.spread.querying.length) {
+			commands.push('-resize');
+			commands.push(`${this.spread.imageBase.querent.size.width || ''}x${this.spread.imageBase.querent.size.height || ''}`);
+			commands.push('-page');
+			commands.push(`${this.spread.imageBase.querent.size.width || ''}x${this.spread.imageBase.querent.size.height || ''}+${this.spread.imageBase.size.width+100}+${this.spread.imageBase.size.height+100}`);
+			commands.push(`${__publicdir}${this.spread.querying[0].image}`);
+			commands.push('-stroke black');
+			commands.push('-fill black');
+			commands.push('-pointsize 16');
+			commands.push('-draw');
+			commands.push(`'text ${this.spread.imageBase.size.width+100},${this.spread.imageBase.size.height+100+this.spread.imageBase.querent.size.height+20} "Querent: ${this.spread.querying[0].getFullCardName()}"'`);
+		}
 
+		// card labeling
 		this.spread.imageBase.cards.forEach((cardImageData, index) => {
 			const currentCard = this.spread.spreadCards[index];
 			commands.push('-stroke black');
@@ -38,6 +53,7 @@ class SpreadImage {
 			commands.push(`'text ${this.spread.imageBase.size.width+100},${(index*40)+40} "${cardImageData.label} [${currentCard.getFullCardName()}]"'`);
 		});
 
+		// finish
 		commands.push('-flatten');
 		commands.push(finalSavePath);
 

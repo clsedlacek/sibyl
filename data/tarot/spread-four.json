@@ -10,6 +10,12 @@
 			"height": 300,
 			"width": 800
 		},
+		"querent": {
+			"size": {
+				"height": 210,
+				"width": false
+			}
+		},
 		"cards": [
 			{
 				"placement": {
