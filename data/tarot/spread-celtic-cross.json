@@ -10,14 +10,14 @@
 	],
 	"layoutImage": {
 		"size": {
-			"height": 1000,
+			"height": 1100,
 			"width": 800
 		},
 		"cards": [
 			{
 				"placement": {
 					"x": 220,
-					"y": 370
+					"y": 380
 				},
 				"size": {
 					"height": 210,
@@ -28,7 +28,7 @@
 			{
 				"placement": {
 					"x": 240,
-					"y": 360
+					"y": 400
 				},
 				"size": {
 					"height": 210,
@@ -39,7 +39,7 @@
 			{
 				"placement": {
 					"x": 35,
-					"y": 370
+					"y": 380
 				},
 				"size": {
 					"height": 210,
@@ -50,7 +50,7 @@
 			{
 				"placement": {
 					"x": 400,
-					"y": 370
+					"y": 380
 				},
 				"size": {
 					"height": 210,
@@ -61,7 +61,7 @@
 			{
 				"placement": {
 					"x": 220,
-					"y": 140
+					"y": 120
 				},
 				"size": {
 					"height": 210,
@@ -72,7 +72,7 @@
 			{
 				"placement": {
 					"x": 220,
-					"y": 600
+					"y": 690
 				},
 				"size": {
 					"height": 210,
@@ -83,7 +83,7 @@
 			{
 				"placement": {
 					"x": 590,
-					"y": 730
+					"y": 810
 				},
 				"size": {
 					"height": 210,
@@ -94,7 +94,7 @@
 			{
 				"placement": {
 					"x": 590,
-					"y": 505
+					"y": 555
 				},
 				"size": {
 					"height": 210,
@@ -105,7 +105,7 @@
 			{
 				"placement": {
 					"x": 590,
-					"y": 275
+					"y": 305
 				},
 				"size": {
 					"height": 210,

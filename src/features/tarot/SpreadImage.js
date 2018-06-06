@@ -12,7 +12,7 @@ class SpreadImage {
 		const commands = [
 			'gm',
 			'convert',
-			'-size', `${this.spread.imageBase.size.width}x${this.spread.imageBase.size.height}`,
+			'-size', `${this.spread.imageBase.size.width+500}x${this.spread.imageBase.size.height}`,
 			`xc:'#FFFFFF'`
 		];
 
@@ -25,11 +25,21 @@ class SpreadImage {
 			commands.push(`${__publicdir}${currentCard.image}`);
 		});
 
+
+		this.spread.imageBase.cards.forEach((cardImageData, index) => {
+			const currentCard = this.spread.spreadCards[index];
+			commands.push('-stroke black');
+			commands.push('-fill black');
+			commands.push('-pointsize 16');
+			commands.push('-draw');
+			commands.push(`'text ${cardImageData.placement.x},${cardImageData.placement.y+cardImageData.size.height+20} "${cardImageData.label}"'`);
+			commands.push('-pointsize 20');
+			commands.push('-draw');
+			commands.push(`'text ${this.spread.imageBase.size.width+100},${(index*40)+40} "${cardImageData.label} [${currentCard.getFullCardName()}]"'`);
+		});
+
 		commands.push('-flatten');
 		commands.push(finalSavePath);
-
-		console.log('commandstring:');
-		console.log(commands.join(' '));
 
 		return new Promise((resolve, reject) => {
 			exec(commands.join(' '), (err, stdout, stderr) => {
