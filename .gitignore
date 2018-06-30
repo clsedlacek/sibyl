@@ -1,9 +1,5 @@
-config/config.json
-config/roles.json
-config/channels.json
-config/moderation.json
-config/tarot.json
 node_modules
 *.swp
+.env
 
 /public/images/tarot/spreads/*
