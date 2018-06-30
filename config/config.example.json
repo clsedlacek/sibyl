@@ -1,7 +1,0 @@
-{
-    "token": "BOT_TOKEN_HERE",
-    "ownerID": "",
-    "prefix": "!",
-    "httpPort": 80,
-    "apiIP": "localhost"
-}
