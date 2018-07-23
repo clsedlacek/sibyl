@@ -7,8 +7,8 @@ class SpreadImage {
 	}
 
 	generateImage(saveLocation) {
-		const tempSavePath = `${__publicdir}/images/tarot/spreads/temp${Math.floor(Math.random()*1000000000)}.png`;
-		const finalSavePath = `${__publicdir}/images/tarot/spreads/final${Math.floor(Math.random()*1000000000)}.png`;
+		const tempSavePath = `${__publicdir}/temp${Math.floor(Math.random()*1000000000)}.png`;
+		const finalSavePath = `${__publicdir}/final${Math.floor(Math.random()*1000000000)}.png`;
 		const commands = [
 			'gm',
 			'convert',
