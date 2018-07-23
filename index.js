@@ -7,7 +7,7 @@ const config = require('./config/config.json');
 
 // set base directory var
 global.__basedir = __dirname;
-global.__publicdir = __dirname + './tmp';
+global.__publicdir = __dirname + '/tmp';
 
 // initialize clients/servers
 const client = new Discord.Client();
