@@ -23,7 +23,7 @@ class SpreadImage {
 			commands.push(`${cardImageData.size.width || ''}x${cardImageData.size.height || ''}`);
 			commands.push('-page');
 			commands.push(`${cardImageData.size.width || ''}x${cardImageData.size.height || ''}+${cardImageData.placement.x}+${cardImageData.placement.y}`);
-			commands.push(`${__publicdir}${currentCard.image}`);
+			commands.push(`./public/${currentCard.image}`);
 		});
 
 		// querent stuff
@@ -32,7 +32,7 @@ class SpreadImage {
 			commands.push(`${this.spread.imageBase.querent.size.width || ''}x${this.spread.imageBase.querent.size.height || ''}`);
 			commands.push('-page');
 			commands.push(`${this.spread.imageBase.querent.size.width || ''}x${this.spread.imageBase.querent.size.height || ''}+${this.spread.imageBase.size.width+100}+${this.spread.imageBase.size.height+100}`);
-			commands.push(`${__publicdir}${this.spread.querying[0].image}`);
+			commands.push(`./public/${this.spread.querying[0].image}`);
 			commands.push('-stroke black');
 			commands.push('-fill black');
 			commands.push('-pointsize 16');

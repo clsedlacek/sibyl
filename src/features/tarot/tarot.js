@@ -185,7 +185,7 @@ module.exports = {
 		}
 		else {
 			const cardMessage = createCardMessage(requestedCard);
-			return guildChannel.send(cardMessage, {files: [`${__publicdir}${requestedCard.image}`]});
+			return guildChannel.send(cardMessage, {files: [`./public/${requestedCard.image}`]});
 		}
 	},
 	sendTarotDeckList: function(guildChannel, deckName) {
