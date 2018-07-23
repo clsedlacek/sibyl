@@ -20,7 +20,7 @@ class TarotCard {
 		}
 	}
 	getCardImageStream() {
-		return attachmentUtils.createAttachmentStream(`./public/${this.image}`);
+		return attachmentUtils.createAttachmentStream(`./public${this.image}`);
 	}
 }
 
