@@ -7,3 +7,5 @@ This bot is based on <evie.codes>'s tutorial series. We miss you, evie:
 https://www.youtube.com/channel/UCvQubaJPD0D-PSokbd5DAiw/videos
 
 This bot requires the installation of Imagemagick and Graphicsmagick, and currently runs on Linux or OS X.
+
+Heroku Node.js + Graphicsmagick buildpack: https://github.com/mcollina/heroku-buildpack-graphicsmagick
