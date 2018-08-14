@@ -8,6 +8,7 @@ module.exports = (client, message) => {
 
 	if(message.author.bot) return;
 
+	// if message is send in #introductions channel, register them via introductions.js
 	if(message.channel.id == channels.introductions) {
 		introductions.registerIntroduction(message.member);
 		return;

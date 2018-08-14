@@ -36,8 +36,14 @@ client.commands.set('meetup', require('./src/commands/meetup.js'));
 client.commands.set('community', require('./src/commands/community.js'));
 client.commands.set('tarot', require('./src/commands/tarot.js'));
 
+// setting all the role commands to /features/role.js. Some of these could be added to the userRoles script through a clever and consolidated function.
+
+//client.commands.set('tripping', require('./src/commands/userRoles.js'));
+//client.commands.set('stoned', require('./src/commands/userRoles.js'));
+client.commands.set('altered', require('./src/commands/userRoles.js'));
+
 // call handleMessage(message) on client.on('message') event; // event call provides function parameter ('message') automagically
-client.on('message', message => require("./src/events/message.js")(client, message));
+client.on('message', message => require("./src/events/me`ssage.js")(client, message));
 // other events that have calls
 client.on('guildCreate', guild => require('./src/events/guildCreate.js')(client, guild));
 client.on('ready', () => require('./src/events/ready.js')(client));
