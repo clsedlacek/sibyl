@@ -43,7 +43,7 @@ client.commands.set('tarot', require('./src/commands/tarot.js'));
 client.commands.set('altered', require('./src/commands/userRoles.js'));
 
 // call handleMessage(message) on client.on('message') event; // event call provides function parameter ('message') automagically
-client.on('message', message => require("./src/events/me`ssage.js")(client, message));
+client.on('message', message => require("./src/events/message.js")(client, message));
 // other events that have calls
 client.on('guildCreate', guild => require('./src/events/guildCreate.js')(client, guild));
 client.on('ready', () => require('./src/events/ready.js')(client));
