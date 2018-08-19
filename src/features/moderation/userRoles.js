@@ -34,7 +34,7 @@ module.exports = {
 		let userRoleName = roleName; // designate what role we're checking for
 	
 		const userRole = callingMember.guild.roles.find("name", roles.stoned);		// this could be replaced with a function to handle other altered states
-		guildChannel.send(`You're already too high! I've removed your role.`)
+		guildChannel.send(`I've removed your ${userRole} role.`)
 		return callingMember.removeRole(userRole)
 	}
 }
