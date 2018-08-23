@@ -21,7 +21,7 @@ module.exports = {
 		let userRoleName = roleName;				// designate what role we're checking for
 	
 		const userRole = callingMember.guild.roles.find("name", roles.stoned);			// this could be replaced with a function to handle other altered states
-		const notificationMessage = (`User <@${callingMember.user.id}> now has role ${userRole}.`);
+		const notificationMessage = (`Congratulations, <@${callingMember.user.id}>! You are now ${userRole}.`);
 
 		return callingMember.addRole(userRole)
 		.then(() => {
