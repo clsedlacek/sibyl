@@ -59,7 +59,7 @@ module.exports = (client, message, args) => {
 					},
 					{
 						"name": "3. Limit discussion of high-risk use",
-						"value": "Discussion of recreational opioid/stimulant use is discouraged, as some present may be recovering. If you are unsure, keep these conversations in #use-management."
+						"value": "Discussion of recreational opioid/stimulant use is discouraged, as some present may be recovering. If you are unsure, keep these conversations in #drug-use."
 					},
 								{
 						"name": "4. Respect altered states",
@@ -132,7 +132,7 @@ module.exports = (client, message, args) => {
 					},
 								{
 						"name": "@:robot: Bots",
-						"value": "Perform automated tasks. Use !help and @Seuss help to get command lists."
+						"value": "Perform automated tasks. Use !help and --help to get command lists."
 					},
 								{
 						"name": "@:books: Librarian",
@@ -156,7 +156,7 @@ module.exports = (client, message, args) => {
 					},
 								{
 						"name": "Pronoun & Identity Roles",
-						"value": "Users may designate pronouns or identity descriptors by using roles. Use #bots for commands !ranks to get a list of available roles, and !rank <role> to add/remove them."
+						"value": "Users may designate pronouns or identity descriptors by using roles. Use #bots for commands --roles to get a list of available roles, and --role <role> to add/remove them."
 					},
 											{
 						"name": "Vanity and Color Roles",
@@ -181,7 +181,7 @@ module.exports = (client, message, args) => {
 				"fields": [
 					{
 						"name": "Current library holdings:",
-						"value": ":floppy_disk: 3,500+ written documents including journal articles, academic studies, seminal books, regular publications, textbooks\n:drug_weed: 1,900+ books and studies on cannabis (thanks DMT-Nexus!)\n:headphones: 110+ audio recordings of healing psychedelic music and protocols, with clinical and ethnographic documentation\n:books: 130+ back issues from major psychedelic publications past and present\n:cheshie: 60+ emojis related to psychedelic culture\n:projector: 20+ vintage films, primary source documentaries, and interviews\n:mag_right: a searchable INDEX.txt, harm reduction resources, information on current and enrolling clinical studies, listing of real-life psychedelic societies\n:satellite_orbital: a .torrent for the Psychedelic Praxis Multimedia Release 1.0, containing an additional 50GB of psychedelic video and audio"
+						"value": ":floppy_disk: 3,500+ written documents including journal articles, academic studies, seminal books, regular publications, textbooks\n:leaves: 1,900+ books and studies on cannabis (thanks DMT-Nexus!)\n:headphones: 110+ audio recordings of healing psychedelic music and protocols, with clinical and ethnographic documentation\n:books: 130+ back issues from major psychedelic publications past and present\n:smile_cat: 60+ emojis related to psychedelic culture\n:projector: 20+ vintage films, primary source documentaries, and interviews\n:mag_right: a searchable INDEX.txt, harm reduction resources, information on current and enrolling clinical studies, listing of real-life psychedelic societies\n:satellite_orbital: a .torrent for the Psychedelic Praxis Multimedia Release 1.0, containing an additional 50GB of psychedelic video and audio"
 					},
 					{
 						"name": "Torrent magnet link URL:",
