@@ -30,6 +30,7 @@ client.commands = new Discord.Collection();
 // setting all the commands and locations
 client.commands.set('ping', require('./src/commands/ping.js'));
 client.commands.set('serverinfo', require('./src/commands/serverinfo.js'));
+client.commands.set('serverpost', require('./src/commands/serverpost.js'));
 client.commands.set('roll', require('./src/commands/roll.js'));
 client.commands.set('help', require('./src/commands/help.js'));
 client.commands.set('meetup', require('./src/commands/meetup.js'));
