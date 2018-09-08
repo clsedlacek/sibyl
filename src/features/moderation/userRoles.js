@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const roles = require('../../../config/roles.json');
-const assignReplies = require('../../../data/replies/userRolesAssign.js');
+const replies = require('../../../data/replies/userRoles');
 const channels = require('../../../config/channels.json');
 
 module.exports = {
@@ -30,12 +30,11 @@ module.exports = {
 		// send a [random] message to the user  in chat
 		// find user role in config (this is redundant and could be refactored/scoped better):
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);	
+		
+		//get random reply and send it if successful
 		let randomChoice = Math.floor((Math.random() * 10 ) + 1 );
-		let notificationMessage = assignReplies.assignReply(randomChoice, callingMember, userRole);
-
-		// send message:
+		let notificationMessage = replies.assignReply(randomChoice, callingMember, userRole);
 		return callingMember.addRole(userRole)
-
 		.then(() => {
 			return guildChannel.send(notificationMessage);
 		}).catch(console.error);
@@ -45,7 +44,13 @@ module.exports = {
 	removeUserRole: function(callingMember, guildChannel, roleName) {
 		let userRoleName = roleName; // designate what role we're checking for
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);			// find user role in config
-		guildChannel.send(`I've removed your ${userRole} role.`);
+		
+		//get random reply and send it
+		let randomChoice = Math.floor((Math.random() * 10 ) + 1 );
+		let notificationMessage = replies.unassignReply(randomChoice, callingMember, userRole);
 		return callingMember.removeRole(userRole)
+		.then(() => {
+			return guildChannel.send(notificationMessage);
+		}).catch(console.error);
 	}
 }
