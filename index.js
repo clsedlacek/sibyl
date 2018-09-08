@@ -36,6 +36,7 @@ client.commands.set('help', require('./src/commands/help.js'));
 client.commands.set('meetup', require('./src/commands/meetup.js'));
 client.commands.set('community', require('./src/commands/community.js'));
 client.commands.set('tarot', require('./src/commands/tarot.js'));
+client.commands.set('nvc', require('./src/commands/nvc.js'));
 
 // setting all the role commands to /features/role.js. Some of these could be added to the userRoles script through a clever and consolidated function.
 
