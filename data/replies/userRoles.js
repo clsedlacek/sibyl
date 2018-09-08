@@ -12,7 +12,17 @@ module.exports = {
 		`<@${callingMember.user.id}> has assumed the rank of ${userRole}.`,
 		`Alright, <@${callingMember.user.id}> might be ${userRole} now, but all things pass.`,
 		`<@${callingMember.user.id}> is totally ${userRole}.`,
-		`<@${callingMember.user.id}>, whether ${userRole} or not ${userRole}, is nonetheless <@${callingMember.user.id}>.`
+		`<@${callingMember.user.id}>, whether ${userRole} or not ${userRole}, is nonetheless <@${callingMember.user.id}>.`,
+		`<@${callingMember.user.id}> has got into the Olympian fumes again.`,
+		`Great <@${callingMember.user.id}>, hope you enjoy ${userRole}.`,
+		`Let's have it then, ${userRole} is noble work.`,
+		`<@${callingMember.user.id}> shall be ${userRole} for a bit.`,
+		`Dionysus declares you be ${userRole}, then.`,
+		`I shall notify the genetic agents.`,
+		`<@${callingMember.user.id}> appears to be ${userRole}.`,
+		`<@${callingMember.user.id}> might be ${userRole} for a time, so be nice to them.`,
+		`<@${callingMember.user.id}> is sailing the ship to ${userRole}town.`,
+		`Now you're <@${callingMember.user.id}>, and there's no turning back.`
 		];
 
 		return replies[choice]
@@ -29,7 +39,17 @@ module.exports = {
 		`To be fair, you haven't been ${userRole} for a short while now.`,
 		`Alright, party's over.`,
 		`You are no longer ${userRole}.`,
-		`I've banished your ${userRole} plight, be free.`
+		`I've banished your ${userRole} plight, be free.`,
+		`I've removed your rank of ${userRole}.`,
+		`Welcome back to sobriety.`,
+		`Don't forget to take your vitamins and get plenty of rest.`,
+		`You *were* ${userRole}, but now you aren't.`,
+		`Did you reach any epiphanies.`,
+		`<@${callingMember.user.id}> has been stripped of their ${userRole} ranks.`,
+		`Good called, being ${userRole} forever is overrated.`,
+		`What goes up, must come down.`,
+		`You're not ${userRole}.`,
+		`That's fine, I'm not ${userRole} either.`
 		];
 
 		return replies[choice]

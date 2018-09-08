@@ -32,7 +32,7 @@ module.exports = {
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);	
 		
 		//get random reply and send it if successful
-		let randomChoice = Math.floor((Math.random() * 10 ) + 1 );
+		let randomChoice = Math.floor((Math.random() * 20 ) );
 		let notificationMessage = replies.assignReply(randomChoice, callingMember, userRole);
 		return callingMember.addRole(userRole)
 		.then(() => {
@@ -46,7 +46,7 @@ module.exports = {
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);			// find user role in config
 		
 		//get random reply and send it
-		let randomChoice = Math.floor((Math.random() * 10 ) + 1 );
+		let randomChoice = Math.floor((Math.random() * 20 ) );
 		let notificationMessage = replies.unassignReply(randomChoice, callingMember, userRole);
 		return callingMember.removeRole(userRole)
 		.then(() => {
