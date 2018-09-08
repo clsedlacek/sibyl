@@ -16,5 +16,22 @@ module.exports = {
 		];
 
 		return replies[choice]
+	},
+
+	unassignReply(choice, callingMember, userRole) {
+		const replies = [
+		`I've removed your ${userRole} role.`,
+		`You're already ${userRole}.`,
+		`The <@${callingMember.user.id}> has landed.`,
+		`Your ${userRole} rank is undone.`,
+		`Dionysus will be displeased.`,
+		`<@${callingMember.user.id}> is no longer ${userRole}.`,
+		`To be fair, you haven't been ${userRole} for a short while now.`,
+		`Alright, party's over.`,
+		`You are no longer ${userRole}.`,
+		`I've banished your ${userRole} plight, be free.`
+		];
+
+		return replies[choice]
 	}
 }
