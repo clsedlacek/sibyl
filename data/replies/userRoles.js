@@ -46,9 +46,9 @@ module.exports = {
 		`You *were* ${userRole}, but now you aren't.`,
 		`Did you reach any epiphanies.`,
 		`<@${callingMember.user.id}> has been stripped of their ${userRole} ranks.`,
-		`Good called, being ${userRole} forever is overrated.`,
-		`What goes up, must come down.`,
-		`You're not ${userRole}.`,
+		`Good call, being ${userRole} forever is overrated.`,
+		`What goes up must come down.`,
+		`You're not ${userRole} any longer.`,
 		`That's fine, I'm not ${userRole} either.`
 		];
 
