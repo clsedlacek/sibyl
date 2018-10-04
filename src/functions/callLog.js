@@ -1,5 +1,5 @@
 const channels = require('../../config/channels.json');
-const messageLogging = 0;		// enable/disable logging of all messages
+const messageLogging = 0;		// toggles logging of all sent messages (messageSend() below)
 const makeEmbed = require('./makeEmbed.js')
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
 
 	messageDeleted: function(client, message) {
 		logchan = client.channels.find("id", channels.logs);
-		if(message.author.bot ==1 && message.channel == logchan) {
+		if(message.author.bot ==1 && message.channel == logchan) { // if messages in the logs channel posted by a bot are being deleted, report a security breach
 			makeEmbed.simpleLog(client, `15478621`, `Log: **Security: Someone is deleting the logs!**`, "");
 		}
 		console.log(`Log: Message Deleted: ${message.author.tag}:\n> ${message}`);

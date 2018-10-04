@@ -57,6 +57,7 @@ client.commands.set('nvc', require('./src/commands/nvc.js'));
 client.commands.set('tripping', require('./src/commands/userRoles.js'));
 client.commands.set('altered', require('./src/commands/userRoles.js'));
 client.commands.set('stoned', require('./src/commands/userRoles.js'));
+client.commands.set('microdosing', require('./src/commands/userRoles.js'));
 
 // call handleMessage(message) on client.on('message') event; // event call provides function parameter ('message') automagically
 client.on('ready', () => require('./src/events/ready.js')(client));
