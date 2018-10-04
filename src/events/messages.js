@@ -12,7 +12,7 @@ module.exports = {
 	
 		// if message is send in #introductions channel, register them via introductions.js
 		if(message.channel.id == channels.introductions) {
-			introductions.registerIntroduction(message.member);
+			introductions.registerIntroduction(message.author);
 			return;
 		};
 	
