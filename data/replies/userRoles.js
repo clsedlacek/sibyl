@@ -45,7 +45,7 @@ module.exports = {
 		`Don't forget to take your vitamins and get plenty of rest.`,
 		`You *were* ${userRole}, but now you aren't.`,
 		`Did you reach any epiphanies?`,
-		`<@${callingMember.user.id}> has been stripped of their ${userRole} rank.`,
+		`<@${callingMember.user.id}> has been stripped of their "${userRole}" rank.`,
 		`Good call, to be ${userRole} forever is overrated.`,
 		`What goes up must come down.`,
 		`You're not ${userRole} any longer.`,

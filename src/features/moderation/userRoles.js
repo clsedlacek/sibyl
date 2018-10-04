@@ -4,11 +4,11 @@ const replies = require('../../../data/replies/userRoles');
 const channels = require('../../../config/channels.json');
 
 module.exports = {
-	// generates a role name without the trailing ("@ ") to avoid mentions
+	// generates a role name without the  mentions
 	getUnmentionable: function(userRole) {						
 		const userRoleLength = userRole.length;
-		const userRoleName = String(userRole.name).substring(3, userRoleLength);
-		return userRoleName;
+		const unmentionableName = String(userRole.name).substring(3, userRoleLength).toLowerCase(); // trims first 3 characters ("@ ")
+		return unmentionableName;
 	},
 
 	// this function will check if user already has the role they're requesting'
@@ -37,7 +37,7 @@ module.exports = {
 		// send a [random] message to the user  in chat
 		// find user role in config (this is redundant and could be refactored/scoped better):
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);	
-		unmentionableName = module.exports.getUnmentionable(userRole).toLowerCase();
+		unmentionableName = module.exports.getUnmentionable(userRole);
 
 		//get random reply and send it if successful
 		let randomChoice = Math.floor((Math.random() * 20 ) );
@@ -52,7 +52,7 @@ module.exports = {
 	removeUserRole: function(callingMember, guildChannel, roleName) {
 		let unmentionableName = roleName; // designate what role we're checking for
 		const userRole = callingMember.guild.roles.find("name", roles[roleName]);			// find user role in config
-		userRoleName = module.exports.getUnmentionable(userRole).toLowerCase();
+		userRoleName = module.exports.getUnmentionable(userRole);
 
 		//get random reply and send it
 		let randomChoice = Math.floor((Math.random() * 20 ) );

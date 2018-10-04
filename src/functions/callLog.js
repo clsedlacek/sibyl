@@ -25,7 +25,7 @@ module.exports = {
 	messageEdited: function(client, oldMessage, newMessage) {
 		if(oldMessage.author.bot) return;
 		console.log(`Log: Message CHANGED in ${newMessage.channel} by ${newMessage.author.tag}. From: \n> ${oldMessage}\nTo:\n> ${newMessage}`);
-		makeEmbed.twoferLog(client, `16761600`, `Log: **Content Changed**`, `Message by **${oldMessage.author.tag}** in **${oldMessage.channel}** has been changed`, "**From:**", `${oldMessage}`, "**To:**", `${newMessage}`);
+		makeEmbed.twoferLog(client, `16761600`, `Log: **Content Changed** or link embed update`, `Message by **${oldMessage.author.tag}** in **${oldMessage.channel}** has been changed`, "**From:**", `${oldMessage}`, "**To:**", `${newMessage}`);
 		return
 	},
 
