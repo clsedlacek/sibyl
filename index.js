@@ -21,11 +21,25 @@ const apiIp = config.apiIp || 'localhost';
 // so that config file is available to modules. could also merge this line with the declaration.
 client.config = config;   
 
-// overloading client namespace to have log.js functionality. evie.codes says this is a bad idea but she also says it's okay.
-client.log = require('./src/functions/log.js');     
-
 // create collection of commands using Discord's API
 client.commands = new Discord.Collection();
+
+// collect all the invites
+const invites = {};     // Initialize the invite cache
+const wait = require('util').promisify(setTimeout); // A pretty useful method to create a delay without blocking the whole script.
+
+client.on('ready', () => {  // "ready" isn't really ready. We need to wait a spell.  
+  wait(1000);
+  // Load all invites for all guilds and save them to the cache.
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+//client.on('guildMemberAdd', member => require('./src/events/guildMembers.js')(client, member));
+
 
 // setting all the commands and locations
 client.commands.set('ping', require('./src/commands/ping.js'));
@@ -45,11 +59,25 @@ client.commands.set('altered', require('./src/commands/userRoles.js'));
 client.commands.set('stoned', require('./src/commands/userRoles.js'));
 
 // call handleMessage(message) on client.on('message') event; // event call provides function parameter ('message') automagically
-client.on('message', message => require("./src/events/message.js")(client, message));
-// other events that have calls
-client.on('guildCreate', guild => require('./src/events/guildCreate.js')(client, guild));
 client.on('ready', () => require('./src/events/ready.js')(client));
-client.on('guildMemberAdd', member => require('./src/events/guildMemberAdd.js')(client, member));
+
+const messages = require('./src/events/messages.js');
+client.on('message', message => messages.send(client, message));
+
+/* LOGGING
+
+client.on('messageDelete', message => messages.deleted(client, message));
+client.on('messageUpdate', (oldMSG, newMSG) => messages.updated(client, oldMSG, newMSG));
+
+const guildMembers = require('./src/events/guildMembers.js');
+client.on('guildCreate', guild => require('./src/events/guildCreate.js')(client, guild));
+client.on('guildMemberAdd', (member) => guildMembers.join(client, member, invites));
+client.on('guildMemberRemove', (member) => guildMembers.depart(client, member));
+client.on('guildBanAdd', (guild, user) => guildMembers.ban(guild, user));
+client.on('guildBanRemove', (guild, user) => guildMembers.unban(guild, user));
+
+*/
+
 client.on('messageReactionAdd', (reaction, user) => require('./src/events/messageReactionAdd.js')(client, reaction, user));
 
 // login with environmental token

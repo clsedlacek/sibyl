@@ -15,7 +15,6 @@ class Dice {
 	}
 }
 
-
 module.exports = {
 	rollDice(diceString, guildMember) {
 		const diceObj = new Dice(diceString, guildMember);
