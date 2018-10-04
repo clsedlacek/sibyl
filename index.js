@@ -64,7 +64,7 @@ client.on('ready', () => require('./src/events/ready.js')(client));
 const messages = require('./src/events/messages.js');
 client.on('message', message => messages.send(client, message));
 
-/* LOGGING
+// LOGGING
 
 client.on('messageDelete', message => messages.deleted(client, message));
 client.on('messageUpdate', (oldMSG, newMSG) => messages.updated(client, oldMSG, newMSG));
@@ -75,8 +75,6 @@ client.on('guildMemberAdd', (member) => guildMembers.join(client, member, invite
 client.on('guildMemberRemove', (member) => guildMembers.depart(client, member));
 client.on('guildBanAdd', (guild, user) => guildMembers.ban(guild, user));
 client.on('guildBanRemove', (guild, user) => guildMembers.unban(guild, user));
-
-*/
 
 client.on('messageReactionAdd', (reaction, user) => require('./src/events/messageReactionAdd.js')(client, reaction, user));
 
