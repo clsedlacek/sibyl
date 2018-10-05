@@ -9,10 +9,8 @@ module.exports = {
 	},
 
 	registerIntroduction: function(guildMember) {
-		console.log(`${guildMember.user.tag} wrote an introduction.`);        
-		normieRole = guildMember.guild.roles.find("name", roles.registree);
-		console.log(`${guildMember.user.tag} is now a ${roles.registree}`);        
-		return guildMember.addRole(normieRole).catch(console.error);
-
+		registreeRole = guildMember.guild.roles.find('name', roles.registree);
+		console.log(`${guildMember.user.tag} wrote an introduction, and is now a ${roles.registree}.`);
+		return guildMember.addRole(registreeRole).catch(console.error);
 	}
 }

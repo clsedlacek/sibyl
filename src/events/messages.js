@@ -12,10 +12,10 @@ module.exports = {
 	
 		// if message is send in #introductions channel, register them via introductions.js
 		if(message.channel.id == channels.introductions) {
-			introductions.registerIntroduction(message.author);
+			introductions.registerIntroduction(message.member);
 			return;
-		};
-	
+		};	
+
 		// log everything and check if message is a user's command
 		if(message.content.indexOf(client.config.prefix) !== 0) return;
 	
