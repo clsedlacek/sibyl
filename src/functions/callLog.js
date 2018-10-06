@@ -1,5 +1,7 @@
 const channels = require('../../config/channels.json');
-const messageLogging = 0;		// toggles logging of all sent messages (messageSend() below)
+const roles = require('../../config/roles.json');
+
+const messageLogging = 1;		// toggles logging of all sent messages (messageSend() below)
 const makeEmbed = require('./makeEmbed.js')
 
 module.exports = {
@@ -46,5 +48,11 @@ module.exports = {
 	userUnbanned: function(client, guild, user) {
 		console.log('Log', `${user.tag} (${user.id}) has been unbanned.`);
 		makeEmbed.simpleLog(client, `16761600`, `Log: **User Unbanned**`, `**${user.tag}** has been **unbanned**.`);
+	},
+
+	botRestart: function(client, guild) {
+//		const techRole = guild.roles.find("name", roles.technicians);
+		console.log('Log', `Sibyl has restarted.`);
+		makeEmbed.simpleLog(client, `15478621`, `Log: **Bot Rebooted**`, `I have either been restarted by a user, or crashed and was reincarnated by the server host.`);
 	}
 }

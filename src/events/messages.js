@@ -10,25 +10,23 @@ module.exports = {
 
 		if(message.author.bot) return;
 	
-		// if message is send in #introductions channel, register them via introductions.js
+		// if message is sent in #introductions channel, register them via introductions.js
 		if(message.channel.id == channels.introductions) {
 			introductions.registerIntroduction(message.member);
 			return;
 		};	
 
-		// log everything and check if message is a user's command
+		// check if first index of string is the specified command prefix
 		if(message.content.indexOf(client.config.prefix) !== 0) return;
 	
-		//make sure first index of string is the specified command prefix
-		const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
-	
 		//magic formula to reformat message into command-argument array
+		const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
 	
 		if (client.commands.has(command)) {
 			client.commands.get(command)(client, message, args);
 			return;
-		};	
+		};
 	},
 
 	deleted: function(client, message) {
